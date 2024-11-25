@@ -108,11 +108,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Carlos Lazcano\\Desktop\\SandBoxMG\\SandBoxMG\\SandBoxMG.csproj",
+      "projectUniqueName": "C:\\Users\\Carlos Lazcano\\Documents\\GitHub\\Monogame\\Monogame_Proy7mo\\SandBoxMG\\SandBoxMG.csproj",
       "projectName": "SandBoxMG",
-      "projectPath": "C:\\Users\\Carlos Lazcano\\Desktop\\SandBoxMG\\SandBoxMG\\SandBoxMG.csproj",
+      "projectPath": "C:\\Users\\Carlos Lazcano\\Documents\\GitHub\\Monogame\\Monogame_Proy7mo\\SandBoxMG\\SandBoxMG.csproj",
       "packagesPath": "C:\\Users\\Carlos Lazcano\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Carlos Lazcano\\Desktop\\SandBoxMG\\SandBoxMG\\obj\\",
+      "outputPath": "C:\\Users\\Carlos Lazcano\\Documents\\GitHub\\Monogame\\Monogame_Proy7mo\\SandBoxMG\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

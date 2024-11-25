@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "MT770ykFdRCggALSIbGZRATvoRB1GB/PdQsrs2bwprtXO7Z3HQCLesCKM8I4MnC5WanXDWIQvE+VsE9VzEQaRg==",
+  "dgSpecHash": "aqJmeY387X4DNhdPn/sCZksuuFwBO6kqwpoyGqXnZKL0kJWW6oSBBNnZkWa3OuamTAJNIUSrdM9VmcRkBNlzkA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Carlos Lazcano\\Desktop\\SandBoxMG\\SandBoxMG\\SandBoxMG.csproj",
+  "projectFilePath": "C:\\Users\\Carlos Lazcano\\Documents\\GitHub\\Monogame\\Monogame_Proy7mo\\SandBoxMG\\SandBoxMG.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Carlos Lazcano\\.nuget\\packages\\monogame.content.builder.task\\3.8.1.303\\monogame.content.builder.task.3.8.1.303.nupkg.sha512",
     "C:\\Users\\Carlos Lazcano\\.nuget\\packages\\monogame.framework.desktopgl\\3.8.1.303\\monogame.framework.desktopgl.3.8.1.303.nupkg.sha512",
