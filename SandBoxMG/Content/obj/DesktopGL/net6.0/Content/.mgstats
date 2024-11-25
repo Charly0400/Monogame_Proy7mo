@@ -1,0 +1,4 @@
+Source File,Dest File,Processor Type,Content Type,Source File Size,Dest File Size,Build Seconds
+"D:/Proyectos/SandboxMonogame/SandBoxMG/SandBoxMG/Content/Sprites/Custom Edited - Sonic the Hedgehog Customs - Sonic American Design SMS-Style.png","D:/Proyectos/SandboxMonogame/SandBoxMG/SandBoxMG/Content/bin/DesktopGL/Content/Sprites/Sanic.xnb","TextureProcessor","Texture2DContent",15481,260345,0.1307304
+"D:/Proyectos/SandboxMonogame/SandBoxMG/SandBoxMG/Content/Sprites/SingleSanic.png","D:/Proyectos/SandboxMonogame/SandBoxMG/SandBoxMG/Content/bin/DesktopGL/Content/Sprites/SingleSanic.xnb","TextureProcessor","Texture2DContent",1273,74085,0.1377578
+"D:/Proyectos/SandboxMonogame/SandBoxMG/SandBoxMG/Content/Sprites/sonic.gif","D:/Proyectos/SandboxMonogame/SandBoxMG/SandBoxMG/Content/bin/DesktopGL/Content/Sprites/sonic.xnb","TextureProcessor","Texture2DContent",5744,48469,0.1495985
