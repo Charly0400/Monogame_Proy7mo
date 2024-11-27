@@ -20,7 +20,7 @@ namespace SandBoxMG.GameThings.GO_s
 
             SpriteComponent _spriteComponent = CreateGenericComponent<SpriteComponent>();
             _spriteComponent.InitializeSpriteComponent(_positionOfTheGameObject);
-            _spriteComponent.LoadSpriteTexture("SingleSanic", content);
+            _spriteComponent.LoadSpriteTexture("Sprites/SingleSanic", content);
             CollisionComponent _collisionComponent = CreateGenericComponent<CollisionComponent>();
             _collisionComponent.InitializeComponent(this);
             _collisionComponent.InitializeCollisionComponent(new Vector2(100,100),this);

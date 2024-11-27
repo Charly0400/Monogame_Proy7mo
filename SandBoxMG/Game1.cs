@@ -23,10 +23,12 @@ namespace SandBoxMG
         protected List<GameObject> _GameObjectsInTheScene;
         public MainMenuScene MMTestScene;
 
+        private SpriteFont font;
+
         public Game1()
         {
             _graphics = new GraphicsDeviceManager(this);
-            Content.RootDirectory = "Content/sprites";
+            Content.RootDirectory = "Content/Media";
             IsMouseVisible = true;
             MMTestScene = new MainMenuScene();
         }
@@ -41,7 +43,7 @@ namespace SandBoxMG
             base.Initialize();
             //TestGO _testGo =  MMTestScene.CreateGenericGameObject<TestGO>();
             MMTestScene.InitializeScene(Content);
-
+            
             //_GameObjectsInTheScene = new List<GameObject>();
             //_GameObjectsInTheScene.Add(new TestGO());
             //foreach (GameObject gameObject in _GameObjectsInTheScene)
@@ -55,6 +57,7 @@ namespace SandBoxMG
         {
             _spriteBatch = new SpriteBatch(GraphicsDevice);
 
+            font = Content.Load<SpriteFont>("Fonts/fontTest");
           
             // TODO: use this.Content to load your game content here
 
@@ -114,9 +117,14 @@ namespace SandBoxMG
             //{
             //    gameObject.renderComponents(_spriteBatch);
             //}
+            _spriteBatch.DrawString(font, "El triple P", Vector2.Zero, Color.Black);
+
             MMTestScene.RenderScene(_spriteBatch);
+
             _spriteBatch.End();
             base.Draw(gameTime);
+
+
         }
 
         //protected void SpriteTest()

@@ -13,19 +13,14 @@
 
 #---------------------------------- Content ---------------------------------#
 
-#begin Sprites/Custom Edited - Sonic the Hedgehog Customs - Sonic American Design SMS-Style.png
-/importer:TextureImporter
-/processor:TextureProcessor
-/processorParam:ColorKeyColor=255,0,255,255
-/processorParam:ColorKeyEnabled=True
-/processorParam:GenerateMipmaps=False
+#begin Media/Fonts/fontTest.spritefont
+/importer:FontDescriptionImporter
+/processor:FontDescriptionProcessor
 /processorParam:PremultiplyAlpha=True
-/processorParam:ResizeToPowerOfTwo=False
-/processorParam:MakeSquare=False
-/processorParam:TextureFormat=Color
-/build:Sprites/Custom Edited - Sonic the Hedgehog Customs - Sonic American Design SMS-Style.png;Sprites/Sanic.png
+/processorParam:TextureFormat=Compressed
+/build:Media/Fonts/fontTest.spritefont
 
-#begin Sprites/SingleSanic.png
+#begin Media/Sprites/Custom Edited - Sonic the Hedgehog Customs - Sonic American Design SMS-Style.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -35,9 +30,9 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:Sprites/SingleSanic.png
+/build:Media/Sprites/Custom Edited - Sonic the Hedgehog Customs - Sonic American Design SMS-Style.png
 
-#begin Sprites/sonic.gif
+#begin Media/Sprites/SingleSanic.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -47,5 +42,17 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:Sprites/sonic.gif
+/build:Media/Sprites/SingleSanic.png
+
+#begin Media/Sprites/sonic.gif
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Media/Sprites/sonic.gif
 

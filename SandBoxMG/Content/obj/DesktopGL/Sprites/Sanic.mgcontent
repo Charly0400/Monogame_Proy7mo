@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <SourceFile>D:/Proyectos/SandboxMonogame/SandBoxMG/SandBoxMG/Content/Sprites/Custom Edited - Sonic the Hedgehog Customs - Sonic American Design SMS-Style.png</SourceFile>
-  <SourceTime>2024-09-30T10:41:31.3092707-06:00</SourceTime>
-  <DestFile>D:/Proyectos/SandboxMonogame/SandBoxMG/SandBoxMG/Content/bin/DesktopGL/Sprites/Sanic.xnb</DestFile>
-  <DestTime>2024-09-30T14:34:07.1487215-06:00</DestTime>
+  <SourceFile>C:/Users/PC2-Alumno 6/Documents/Github/Monogame_Proy7mo/SandBoxMG/Content/Sprites/Custom Edited - Sonic the Hedgehog Customs - Sonic American Design SMS-Style.png</SourceFile>
+  <SourceTime>2024-11-27T08:16:17.4940816-06:00</SourceTime>
+  <DestFile>C:/Users/PC2-Alumno 6/Documents/Github/Monogame_Proy7mo/SandBoxMG/Content/bin/DesktopGL/Sprites/Sanic.xnb</DestFile>
+  <DestTime>2024-11-27T09:24:15.5183036-06:00</DestTime>
   <Importer>TextureImporter</Importer>
   <ImporterTime>2022-07-26T06:44:56-05:00</ImporterTime>
   <Processor>TextureProcessor</Processor>
