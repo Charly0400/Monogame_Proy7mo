@@ -1,4 +1,5 @@
-﻿using Microsoft.Xna.Framework.Content;
+﻿using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
 using System;
 using System.Collections.Generic;
@@ -12,32 +13,40 @@ namespace SandBoxMG.Content.Code.Scenes.GameObjects.Components
     {
         #region Variables
 
-
+        SpriteFont font;
+        Vector2 textPos;
+        string text;
 
         #endregion
         public TextComponent() 
         {
-            
+            text = string.Empty;    
         }
 
         #region 
         public override void InitializeComponent(GameObject _GORef) 
         {
-            InitializeTextComponent();
+            InitializeTextComponent(_GORef._positionOfTheGameObject);
         }
 
-        public void InitializeTextComponent( ) 
+        public void InitializeTextComponent(Vector2 posParam) 
         {
-
+            textPos = new Vector2 (posParam.X, posParam.Y);
         }
-        public void LoadTextTexture(string _TextureName, ContentManager content) 
+
+        /*public void LoadText(string _TextName, ContentManager content) 
         {
-           
+            font = content.Load<String()>(_TextName);
+        }*/
+
+        public void SetText(string newText)
+        {
+            text = newText;
         }
 
         public override void RenderComponent(SpriteBatch _spriteBatch) 
         {
-            
+            _spriteBatch.DrawString(font, text, textPos, Color.Black); ;
         }
 
         #endregion
