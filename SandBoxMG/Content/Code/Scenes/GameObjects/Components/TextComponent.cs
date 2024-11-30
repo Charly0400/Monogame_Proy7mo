@@ -18,33 +18,30 @@ namespace SandBoxMG.Content.Code.Scenes.GameObjects.Components
         string text;
 
         #endregion
-        public TextComponent() 
+
+        public TextComponent()
         {
-            text = string.Empty;    
+            text = string.Empty;
         }
 
         #region 
-        public override void InitializeComponent(GameObject _GORef) 
+        public override void InitializeComponent(GameObject _GORef)
         {
             InitializeTextComponent(_GORef._positionOfTheGameObject);
         }
 
-        public void InitializeTextComponent(Vector2 posParam) 
+        public void InitializeTextComponent(Vector2 posParam)
         {
-            textPos = new Vector2 (posParam.X, posParam.Y);
+            textPos = new Vector2(posParam.X, posParam.Y);
+            font = Game1._spriteFont;
         }
-
-        /*public void LoadText(string _TextName, ContentManager content) 
-        {
-            font = content.Load<String()>(_TextName);
-        }*/
 
         public void SetText(string newText)
         {
             text = newText;
         }
 
-        public override void RenderComponent(SpriteBatch _spriteBatch) 
+        public override void RenderComponent(SpriteBatch _spriteBatch)
         {
             _spriteBatch.DrawString(font, text, textPos, Color.Black); ;
         }

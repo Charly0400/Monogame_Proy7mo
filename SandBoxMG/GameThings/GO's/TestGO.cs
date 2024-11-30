@@ -23,7 +23,10 @@ namespace SandBoxMG.GameThings.GO_s
             _spriteComponent.LoadSpriteTexture("Sprites/SingleSanic", content);
             CollisionComponent _collisionComponent = CreateGenericComponent<CollisionComponent>();
             _collisionComponent.InitializeComponent(this);
-            _collisionComponent.InitializeCollisionComponent(new Vector2(100,100),this);
+            _collisionComponent.InitializeCollisionComponent(new Vector2(100, 100), this);
+            TextComponent _textComponent = CreateGenericComponent<TextComponent>();
+            _textComponent.InitializeTextComponent(_positionOfTheGameObject);
+            _textComponent.SetText("MyNIGGA");
             base.InitializeGameObject(content);
         }
 

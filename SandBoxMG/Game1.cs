@@ -23,7 +23,7 @@ namespace SandBoxMG
         protected List<GameObject> _GameObjectsInTheScene;
         public MainMenuScene MMTestScene;
 
-        private SpriteFont font;
+        public static SpriteFont _spriteFont { get; set; }
 
         public Game1()
         {
@@ -57,7 +57,7 @@ namespace SandBoxMG
         {
             _spriteBatch = new SpriteBatch(GraphicsDevice);
 
-            font = Content.Load<SpriteFont>("Fonts/fontTest");
+            _spriteFont = Content.Load<SpriteFont>("Fonts/fontTest");
           
             // TODO: use this.Content to load your game content here
 
@@ -82,7 +82,7 @@ namespace SandBoxMG
                     _SampleTexturePos.Y -= updatedSampletextureSpeed;
                 }
                 else if (jstate.Axes[1] > deadZone)
-                {
+                { 
                     _SampleTexturePos.Y += updatedSampletextureSpeed;
                 }
 
@@ -117,10 +117,9 @@ namespace SandBoxMG
             //{
             //    gameObject.renderComponents(_spriteBatch);
             //}
-            _spriteBatch.DrawString(font, "El triple P", Vector2.Zero, Color.Black);
+
 
             MMTestScene.RenderScene(_spriteBatch);
-
             _spriteBatch.End();
             base.Draw(gameTime);
 
@@ -146,5 +145,10 @@ namespace SandBoxMG
         //    go.InitializeGameObject(Content);
         //    return go;
         //}
+        #region Getters&Setters
+
+        public SpriteFont GetFont { get { return _spriteFont; } }
+
+        #endregion
     }
 }
