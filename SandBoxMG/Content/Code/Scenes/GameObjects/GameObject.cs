@@ -14,12 +14,14 @@ namespace SandBoxMG.Content.Code.Scenes.GameObjects
     public class GameObject
     {
         public List<Component> _componentsOfTheGO;
+        public List<object> components;
         public Vector2 _positionOfTheGameObject;
         
 
         public GameObject()
         {
             _componentsOfTheGO = new List<Component>();
+            components = new List<object>();
         }
 
         public virtual void InitializeGameObject(ContentManager content)
@@ -62,5 +64,6 @@ namespace SandBoxMG.Content.Code.Scenes.GameObjects
             _componentsOfTheGO.Add(component);
             return component;
         }
+
     }
 }
