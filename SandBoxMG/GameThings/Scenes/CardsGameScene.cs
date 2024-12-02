@@ -23,18 +23,17 @@ namespace SandBoxMG.Content.Code.Scenes
         }
         public override void InitializeScene(ContentManager content)
         {
-            int cardsPerRow = 3;
-            Vector2 cardSize = new Vector2(150, 100);
-            Vector2 startOffset = new Vector2(150, 10);
-
-            for (int i = 0; i < 12; i++)
+            int cardsPerRow = 4 ;
+            Vector2 cardSize = new Vector2(157.5f, 157.5f);
+            Vector2 startOffset = new Vector2(55, 55);
+            for (int i = 0; i < 16; i++)
             {
                 CardPrefab card = CreateGenericGameObject<CardPrefab>();
 
                 int row = i / cardsPerRow;
                 int col = i % cardsPerRow;
 
-                Vector2 position = startOffset + new Vector2(col * (cardSize.X + 20), row * (cardSize.Y + 20));
+                Vector2 position = startOffset + new Vector2(col * (cardSize.X), row * (cardSize.Y ));
 
                 card.SetPrefabProperties(position, cardSize, "Sprites/SingleSanic", $"Carta {i + 1}");
                 card.InitializeGameObject(content);

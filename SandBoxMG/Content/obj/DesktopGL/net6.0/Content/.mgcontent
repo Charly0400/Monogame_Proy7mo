@@ -4,10 +4,10 @@
   <Platform>DesktopGL</Platform>
   <Config />
   <SourceFiles>
-    <File>C:/Users/Carlos Lazcano/Documents/GitHub/Monogame/Monogame_Proy7mo/SandBoxMG/Content/Media/Fonts/fontTest.spritefont</File>
-    <File>C:/Users/Carlos Lazcano/Documents/GitHub/Monogame/Monogame_Proy7mo/SandBoxMG/Content/Media/Sprites/Custom Edited - Sonic the Hedgehog Customs - Sonic American Design SMS-Style.png</File>
-    <File>C:/Users/Carlos Lazcano/Documents/GitHub/Monogame/Monogame_Proy7mo/SandBoxMG/Content/Media/Sprites/SingleSanic.png</File>
-    <File>C:/Users/Carlos Lazcano/Documents/GitHub/Monogame/Monogame_Proy7mo/SandBoxMG/Content/Media/Sprites/sonic.gif</File>
+    <File>C:/Users/PC2-Alumno 3/Documents/GitHub/Monogame_Proy7mo/SandBoxMG/Content/Media/Fonts/fontTest.spritefont</File>
+    <File>C:/Users/PC2-Alumno 3/Documents/GitHub/Monogame_Proy7mo/SandBoxMG/Content/Media/Sprites/Custom Edited - Sonic the Hedgehog Customs - Sonic American Design SMS-Style.png</File>
+    <File>C:/Users/PC2-Alumno 3/Documents/GitHub/Monogame_Proy7mo/SandBoxMG/Content/Media/Sprites/SingleSanic.png</File>
+    <File>C:/Users/PC2-Alumno 3/Documents/GitHub/Monogame_Proy7mo/SandBoxMG/Content/Media/Sprites/sonic.gif</File>
   </SourceFiles>
   <DestFiles>
     <File xsi:nil="true" />

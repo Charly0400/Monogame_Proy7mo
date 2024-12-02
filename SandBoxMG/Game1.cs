@@ -22,18 +22,20 @@ namespace SandBoxMG
 
         protected List<GameObject> _GameObjectsInTheScene;
         public MainMenuScene MMTestScene;
+        public CardsGameScene CGScene;
 
         public static SpriteFont _spriteFont { get; set; }
 
         public Game1()
         {
             _graphics = new GraphicsDeviceManager(this);
-            _graphics.PreferredBackBufferWidth = 1080;
+            _graphics.PreferredBackBufferWidth = 720;
             _graphics.PreferredBackBufferHeight = 720;
             _graphics.ApplyChanges();
             Content.RootDirectory = "Content/Media";
             IsMouseVisible = true;
             MMTestScene = new MainMenuScene();
+            CGScene = new CardsGameScene();
         }
 
         protected override void Initialize()
@@ -43,7 +45,7 @@ namespace SandBoxMG
             _STSpeed = 100f;
             deadZone = 460;
             base.Initialize();
-            MMTestScene.InitializeScene(Content);
+            CGScene.InitializeScene(Content);
 
         }
 
@@ -92,7 +94,7 @@ namespace SandBoxMG
 
             base.Update(gameTime);
             InputManager.Update();
-            MMTestScene.UpdateScene();   
+            CGScene.UpdateScene();   
             Draw(gameTime);
         }
 
@@ -101,7 +103,7 @@ namespace SandBoxMG
             GraphicsDevice.Clear(Color.CornflowerBlue);
 
             _spriteBatch.Begin();
-            MMTestScene.RenderScene(_spriteBatch);
+            CGScene.RenderScene(_spriteBatch);
             _spriteBatch.End();
             base.Draw(gameTime);
         }

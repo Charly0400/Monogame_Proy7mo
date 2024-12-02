@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 using SandBoxMG.Content.Code.Scenes.GameObjects;
 using static System.Net.Mime.MediaTypeNames;
 
-namespace SandBoxMG.GameThings
+namespace SandBoxMG.GameThings.GO_s
 {
     public class CardPrefab : GameObject
     {
