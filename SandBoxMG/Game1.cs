@@ -28,6 +28,9 @@ namespace SandBoxMG
         public Game1()
         {
             _graphics = new GraphicsDeviceManager(this);
+            _graphics.PreferredBackBufferWidth = 1080;
+            _graphics.PreferredBackBufferHeight = 720;
+            _graphics.ApplyChanges();
             Content.RootDirectory = "Content/Media";
             IsMouseVisible = true;
             MMTestScene = new MainMenuScene();
@@ -36,20 +39,11 @@ namespace SandBoxMG
         protected override void Initialize()
         {
             // TODO: Add your initialization logic here
-
             _SampleTexturePos = new Vector2(_graphics.PreferredBackBufferWidth / 2, _graphics.PreferredBackBufferHeight / 2);
             _STSpeed = 100f;
             deadZone = 460;
             base.Initialize();
-            //TestGO _testGo =  MMTestScene.CreateGenericGameObject<TestGO>();
             MMTestScene.InitializeScene(Content);
-            
-            //_GameObjectsInTheScene = new List<GameObject>();
-            //_GameObjectsInTheScene.Add(new TestGO());
-            //foreach (GameObject gameObject in _GameObjectsInTheScene)
-            //    gameObject.InitializeGameObject(Content/*, new Vector2(120, 200)*/);
-            //}
-
 
         }
 
@@ -60,8 +54,6 @@ namespace SandBoxMG
             _spriteFont = Content.Load<SpriteFont>("Fonts/fontTest");
           
             // TODO: use this.Content to load your game content here
-
-            //_SampleTexture = Content.Load<Texture2D>("SingleSanic");
 
         }
 
@@ -109,42 +101,11 @@ namespace SandBoxMG
             GraphicsDevice.Clear(Color.CornflowerBlue);
 
             _spriteBatch.Begin();
-            //SpriteTest();
-            //GOTest();
-            //Gameobject[].draw(SpriteBatch);
-            //_spriteBatch.Draw(_SampleTexture, _SampleTexturePos, null, Color.White, 0f, new Vector2(_SampleTexture.Width / 2, _SampleTexture.Height/2), Vector2.One,SpriteEffects.None,0f);
-            //foreach (GameObject gameObject in _GameObjectsInTheScene)
-            //{
-            //    gameObject.renderComponents(_spriteBatch);
-            //}
-
-
             MMTestScene.RenderScene(_spriteBatch);
             _spriteBatch.End();
             base.Draw(gameTime);
-
-
         }
 
-        //protected void SpriteTest()
-        //{
-        //    SpriteComponent spriteComponent = new SpriteComponent();
-        //    spriteComponent.InitializeSpriteComponent(new Vector2(0, 0));
-        //    spriteComponent.LoadSpriteTexture("SingleSanic", Content);
-        //    spriteComponent.Draw(_spriteBatch);
-        //}
-
-        //protected GameObject GOTest()
-        //{
-        //    GameObject go = new GameObject();
-        //    SpriteComponent _spriteComponent = new SpriteComponent();
-        //    go._positionOfTheGameObject = new Vector2(0, 0);
-        //    go._componentsOfTheGO.Add(_spriteComponent);
-        //    _spriteComponent.InitializeComponent(go);
-        //    _spriteComponent.LoadSpriteTexture("SingleSanic", Content);
-        //    go.InitializeGameObject(Content);
-        //    return go;
-        //}
         #region Getters&Setters
 
         public SpriteFont GetFont { get { return _spriteFont; } }

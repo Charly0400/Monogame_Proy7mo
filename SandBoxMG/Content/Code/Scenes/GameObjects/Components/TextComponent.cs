@@ -14,7 +14,7 @@ namespace SandBoxMG.Content.Code.Scenes.GameObjects.Components
         #region Variables
 
         SpriteFont font;
-        Vector2 textPos;
+        Vector2 textPosition;
         string text;
 
         #endregion
@@ -32,7 +32,7 @@ namespace SandBoxMG.Content.Code.Scenes.GameObjects.Components
 
         public void InitializeTextComponent(Vector2 posParam)
         {
-            textPos = new Vector2(posParam.X, posParam.Y);
+            textPosition = new Vector2(posParam.X, posParam.Y);
             font = Game1._spriteFont;
         }
 
@@ -43,7 +43,7 @@ namespace SandBoxMG.Content.Code.Scenes.GameObjects.Components
 
         public override void RenderComponent(SpriteBatch _spriteBatch)
         {
-            _spriteBatch.DrawString(font, text, textPos, Color.Black); ;
+            _spriteBatch.DrawString(font, text, textPosition, Color.Black); ;
         }
 
         #endregion
