@@ -1,5 +1,6 @@
 ﻿using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
+using Microsoft.Xna.Framework;
 using SandBoxMG.Content.Code.Scenes;
 using SandBoxMG.Content.Code.Scenes.GameObjects;
 using SandBoxMG.GameThings;
@@ -9,7 +10,6 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
-using System.Numerics;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -17,6 +17,10 @@ namespace SandBoxMG.Content.Code.Scenes
 {
     public class MainMenuScene : Scenes
     {
+        private Vector2 _position;
+        private Vector2 _collsionSize;
+
+
         public MainMenuScene()
         {
             _GameObjectsInTheScene = new List<GameObject>();
@@ -24,18 +28,16 @@ namespace SandBoxMG.Content.Code.Scenes
 
         public override void InitializeScene(ContentManager content)
         {
-            
-            Vector2 cardSize = new Vector2(1, 1);
-            Vector2 position = new Vector2(300, 300);
+            _position = new Vector2(350, 200);
+            _collsionSize = new Vector2(150, 150);
 
-            Button button = CreateGenericGameObject<Button>();
 
-            button.SetButtonProperties(position, cardSize, "Sprites/is_7", "Carta ");
-            button.InitializeGameObject(content);
-
-            Debug.WriteLine(cardSize);
-            base.InitializeScene(content);
+            //scriptcardsspawner();
+            Button buttons = CreateGenericGameObject<Button>();
+            buttons.SetButtonProperties(_position, _collsionSize, "Sprites/pizzaCheck", "MYNIGGAAAAAA", content);
+            base.InitializeScene(content);     
         }
+
 
         
     }

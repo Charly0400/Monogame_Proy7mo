@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("SandBoxMG")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+7a107a93600dae32a5385f5c7490b9e3cdc4b948")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
 [assembly: System.Reflection.AssemblyProductAttribute("SandBoxMG")]
 [assembly: System.Reflection.AssemblyTitleAttribute("SandBoxMG")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

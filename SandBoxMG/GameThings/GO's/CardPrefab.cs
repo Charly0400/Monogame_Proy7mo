@@ -24,7 +24,7 @@ namespace SandBoxMG.GameThings.GO_s
             prefabCollisionSize = Vector2.One;
             prefabTextureName = string.Empty;
             prefabText = string.Empty;
-
+                
         }
         public CardPrefab(Vector2 position, Vector2 collisionSize, string textureName, string text) 
         {

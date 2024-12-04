@@ -30,13 +30,13 @@ namespace SandBoxMG.Content.Code.Scenes.GameObjects.Components
 
         public override void UpdateComponent()
         {
-            
-            //if (InputManager.InputManager.Clicked) {
-            //    Debug.WriteLine(InputManager.InputManager.mouseCursor);
-            //    {
-            //        Debug.WriteLine("Choca con collider");
-            //    }
-            //}
+
+            if (InputManager.InputManager.Clicked) {
+                Debug.WriteLine(InputManager.InputManager.mouseCursor);
+                {
+                    Debug.WriteLine("Choca con collider");
+                }
+            }
 
         }
     }

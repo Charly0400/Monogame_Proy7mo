@@ -35,7 +35,7 @@ namespace SandBoxMG
             Content.RootDirectory = "Content/Media";
             IsMouseVisible = true;
             MMTestScene = new MainMenuScene();
-            CGScene = new CardsGameScene();
+            //CGScene = new CardsGameScene();
         }
 
         protected override void Initialize()
@@ -46,6 +46,7 @@ namespace SandBoxMG
             deadZone = 460;
             base.Initialize();
             MMTestScene.InitializeScene(Content);
+            //CGScene.InitializeScene(Content);
         }
 
         protected override void LoadContent()
@@ -104,6 +105,7 @@ namespace SandBoxMG
 
             _spriteBatch.Begin();
             MMTestScene.RenderScene(_spriteBatch);
+            //CGScene.RenderScene(_spriteBatch);
             _spriteBatch.End();
             base.Draw(gameTime);
         }

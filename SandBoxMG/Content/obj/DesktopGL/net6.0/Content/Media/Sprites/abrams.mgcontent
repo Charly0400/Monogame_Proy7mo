@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <SourceFile>C:/Users/Carlos Lazcano/Documents/GitHub/Monogame/Monogame_Proy7mo/SandBoxMG/Content/Media/Sprites/abrams.png</SourceFile>
-  <SourceTime>2024-12-03T23:11:08.250668-06:00</SourceTime>
-  <DestFile>C:/Users/Carlos Lazcano/Documents/GitHub/Monogame/Monogame_Proy7mo/SandBoxMG/Content/bin/DesktopGL/Content/Media/Sprites/abrams.xnb</DestFile>
-  <DestTime>2024-12-03T23:14:02.1556604-06:00</DestTime>
+  <SourceFile>C:/Users/PC2-Alumno 6/Documents/Github/Monogame_Proy7mo/SandBoxMG/Content/Media/Sprites/abrams.png</SourceFile>
+  <SourceTime>2024-12-04T07:03:27.0318273-06:00</SourceTime>
+  <DestFile>C:/Users/PC2-Alumno 6/Documents/Github/Monogame_Proy7mo/SandBoxMG/Content/bin/DesktopGL/Content/Media/Sprites/abrams.xnb</DestFile>
+  <DestTime>2024-12-04T07:04:03.0782003-06:00</DestTime>
   <Importer>TextureImporter</Importer>
   <ImporterTime>2022-07-26T06:44:56-05:00</ImporterTime>
   <Processor>TextureProcessor</Processor>
