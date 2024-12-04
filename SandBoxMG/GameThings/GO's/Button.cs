@@ -1,15 +1,15 @@
-﻿using Microsoft.Xna.Framework.Graphics;
-using Microsoft.Xna.Framework;
-using System;
+﻿using SandBoxMG.Content.Code.Scenes.GameObjects.Components;
+using SandBoxMG.Content.Code.Scenes.GameObjects;
+using SandBoxMG.Content.Code.InputManager;
+using Microsoft.Xna.Framework.Graphics;
+using Microsoft.Xna.Framework.Content;
 using System.Collections.Generic;
+using Microsoft.Xna.Framework;
+using System.Threading.Tasks;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
-using SandBoxMG.Content.Code.Scenes.GameObjects.Components;
-using SandBoxMG.Content.Code.Scenes.GameObjects;
-using Microsoft.Xna.Framework.Content;
-using SandBoxMG.Content.Code.InputManager;
-using System.Diagnostics;
+using System;
 
 namespace SandBoxMG.GameThings.GO_s
 {
@@ -32,22 +32,24 @@ namespace SandBoxMG.GameThings.GO_s
             _textureName = nameTexture;
             _text = text;
             InitializeGameObject(content);
-
-
         }
 
         public override void InitializeGameObject(ContentManager content)
         {
             _positionOfTheGameObject = _position;
+
              SpriteComponent _spriteComponent = CreateGenericComponent<SpriteComponent>();
             _spriteComponent.InitializeSpriteComponent(_position);
             _spriteComponent.LoadSpriteTexture(_textureName, content);
+
             CollisionComponent _collisionComponent = CreateGenericComponent<CollisionComponent>();
             _collisionComponent.InitializeComponent(this);
             _collisionComponent.InitializeCollisionComponent(_collsionSize, this);
+
             TextComponent _textComponent = CreateGenericComponent<TextComponent>();
             _textComponent.InitializeTextComponent(_position);
             _textComponent.SetText(_text);
+
             base.InitializeGameObject(content);
         }
 
@@ -59,7 +61,5 @@ namespace SandBoxMG.GameThings.GO_s
         {
             base.renderComponents(_spriteBatch);
         }
-
-        
     }
 }
