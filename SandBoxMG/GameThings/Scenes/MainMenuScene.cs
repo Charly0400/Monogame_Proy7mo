@@ -17,18 +17,26 @@ namespace SandBoxMG.Content.Code.Scenes
 {
     public class MainMenuScene : Scenes
     {
-        Button button;
-
         public MainMenuScene()
         {
             _GameObjectsInTheScene = new List<GameObject>();
-
         }
 
         public override void InitializeScene(ContentManager content)
         {
-            button = CreateGenericGameObject<Button>();
+            
+            Vector2 cardSize = new Vector2(1, 1);
+            Vector2 position = new Vector2(300, 300);
+
+            Button button = CreateGenericGameObject<Button>();
+
+            button.SetButtonProperties(position, cardSize, "Sprites/is_7", "Carta ");
+            button.InitializeGameObject(content);
+
+            Debug.WriteLine(cardSize);
             base.InitializeScene(content);
         }
+
+        
     }
 }

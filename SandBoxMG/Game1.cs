@@ -45,8 +45,7 @@ namespace SandBoxMG
             _STSpeed = 100f;
             deadZone = 460;
             base.Initialize();
-            CGScene.InitializeScene(Content);
-
+            MMTestScene.InitializeScene(Content);
         }
 
         protected override void LoadContent()

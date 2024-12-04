@@ -9,37 +9,37 @@ using SandBoxMG.Content.Code.Scenes.GameObjects.Components;
 using SandBoxMG.Content.Code.Scenes.GameObjects;
 using Microsoft.Xna.Framework.Content;
 using SandBoxMG.Content.Code.InputManager;
+using System.Diagnostics;
 
 namespace SandBoxMG.GameThings.GO_s
 {
         public class Button : GameObject
     {
-        //private Action onClickAction; // Acción a ejecutar al hacer clic
         private Vector2 buttonSize;
+        private Vector2 buttonPosition;
         private string buttonText;
         private string buttonTextureName;
 
-        public Button() 
+        public Button()
         {
+            buttonPosition = Vector2.Zero;
             buttonSize = Vector2.One;
             buttonText = string.Empty;
             buttonTextureName = string.Empty;
         }
 
-        public void SetButtonProperties(Vector2 position, Vector2 size, string textureName, string text, Action onClick)
+        public Button(Vector2 position, Vector2 size, string textureName, string text)
         {
-            _positionOfTheGameObject = position;
+            buttonPosition = position;
             buttonSize = size;
-            buttonTextureName = textureName;
             buttonText = text;
-            //onClickAction = onClick;
+            buttonTextureName = textureName;
         }
 
         public override void InitializeGameObject(ContentManager content)
         {
-            // Crear y configurar los componentes del botón
             SpriteComponent sprite = CreateGenericComponent<SpriteComponent>();
-            sprite.InitializeSpriteComponent(_positionOfTheGameObject);
+            sprite.InitializeSpriteComponent(buttonPosition);
             sprite.LoadSpriteTexture(buttonTextureName, content);
 
             CollisionComponent collider = CreateGenericComponent<CollisionComponent>();
@@ -47,27 +47,37 @@ namespace SandBoxMG.GameThings.GO_s
             collider.InitializeCollisionComponent(buttonSize, this);
 
             TextComponent text = CreateGenericComponent<TextComponent>();
-            text.InitializeTextComponent(_positionOfTheGameObject);
+            text.InitializeTextComponent(buttonPosition);
             text.SetText(buttonText);
+
 
             base.InitializeGameObject(content);
         }
 
-        //public override void UpdateGameObject()
-        //{
-        //    base.UpdateGameObject();
+        public override void UpdateGameObject()
+        {
+            if (InputManager.Clicked)
+            {
+                Debug.WriteLine(InputManager.mouseCursor);
+                {
+                    Debug.WriteLine("asdas");
 
-        //    // Detectar clic dentro del área del botón
-        //    if (InputManager.Clicked && buttonBounds.Intersects(InputManager.mouseCursor))
-        //    {
-        //        onClickAction?.Invoke();
-        //    }
-        //}
+                }
+            }
+            base.UpdateGameObject();
+        }
+        public override void renderComponents(SpriteBatch _spriteBatch)
+        {
+            base.renderComponents(_spriteBatch);
+        }
+        public void SetButtonProperties(Vector2 position, Vector2 collisionSize, string textureName, string text)
+        {
+            buttonPosition = position;
+            buttonSize = collisionSize;
+            buttonTextureName = textureName;
+            buttonText = text;
 
-        //public override void renderComponents(SpriteBatch spriteBatch)
-        //{
-        //    base.renderComponents(spriteBatch);
-        //    spriteComponent.RenderComponent(spriteBatch);
-        //}
+            _positionOfTheGameObject = buttonPosition;
+        }
     }
 }

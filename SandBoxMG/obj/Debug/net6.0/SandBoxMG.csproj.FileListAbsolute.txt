@@ -121,3 +121,12 @@ C:\Users\PC2-Alumno 3\Documents\GitHub\Monogame_Proy7mo\SandBoxMG\obj\Debug\net6
 C:\Users\PC2-Alumno 3\Documents\GitHub\Monogame_Proy7mo\SandBoxMG\obj\Debug\net6.0\SandBoxMG.genruntimeconfig.cache
 C:\Users\PC2-Alumno 3\Documents\GitHub\Monogame_Proy7mo\SandBoxMG\obj\Debug\net6.0\ref\SandBoxMG.dll
 C:\Users\Carlos Lazcano\Documents\GitHub\Monogame\Monogame_Proy7mo\SandBoxMG\bin\Debug\net6.0\Content\Media\Sprites\rectangle.xnb
+C:\Users\Carlos Lazcano\Documents\GitHub\Monogame\Monogame_Proy7mo\SandBoxMG\bin\Debug\net6.0\Content\Media\Sprites\abrams.xnb
+C:\Users\Carlos Lazcano\Documents\GitHub\Monogame\Monogame_Proy7mo\SandBoxMG\bin\Debug\net6.0\Content\Media\Sprites\churchill.xnb
+C:\Users\Carlos Lazcano\Documents\GitHub\Monogame\Monogame_Proy7mo\SandBoxMG\bin\Debug\net6.0\Content\Media\Sprites\is_7.xnb
+C:\Users\Carlos Lazcano\Documents\GitHub\Monogame\Monogame_Proy7mo\SandBoxMG\bin\Debug\net6.0\Content\Media\Sprites\landsverk.xnb
+C:\Users\Carlos Lazcano\Documents\GitHub\Monogame\Monogame_Proy7mo\SandBoxMG\bin\Debug\net6.0\Content\Media\Sprites\onichan.xnb
+C:\Users\Carlos Lazcano\Documents\GitHub\Monogame\Monogame_Proy7mo\SandBoxMG\bin\Debug\net6.0\Content\Media\Sprites\pizzaCheck.xnb
+C:\Users\Carlos Lazcano\Documents\GitHub\Monogame\Monogame_Proy7mo\SandBoxMG\bin\Debug\net6.0\Content\Media\Sprites\Portada.xnb
+C:\Users\Carlos Lazcano\Documents\GitHub\Monogame\Monogame_Proy7mo\SandBoxMG\bin\Debug\net6.0\Content\Media\Sprites\tiger.xnb
+C:\Users\Carlos Lazcano\Documents\GitHub\Monogame\Monogame_Proy7mo\SandBoxMG\bin\Debug\net6.0\Content\Media\Sprites\ztz.xnb

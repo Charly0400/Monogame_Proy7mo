@@ -37,6 +37,7 @@ namespace SandBoxMG.Content.Code.Scenes
 
                 card.SetPrefabProperties(position, cardSize, "Sprites/SingleSanic", $"Carta {i + 1}");
                 card.InitializeGameObject(content);
+                _GameObjectsInTheScene.Add(card);
             }
         }         
     } 
