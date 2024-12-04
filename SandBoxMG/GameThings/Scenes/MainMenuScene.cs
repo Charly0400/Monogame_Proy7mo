@@ -17,6 +17,7 @@ namespace SandBoxMG.Content.Code.Scenes
 {
     public class MainMenuScene : Scenes
     {
+        Button button;
 
         public MainMenuScene()
         {
@@ -26,6 +27,7 @@ namespace SandBoxMG.Content.Code.Scenes
 
         public override void InitializeScene(ContentManager content)
         {
+            button = CreateGenericGameObject<Button>();
             base.InitializeScene(content);
         }
     }

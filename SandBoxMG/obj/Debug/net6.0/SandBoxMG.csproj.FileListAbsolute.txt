@@ -120,3 +120,4 @@ C:\Users\PC2-Alumno 3\Documents\GitHub\Monogame_Proy7mo\SandBoxMG\obj\Debug\net6
 C:\Users\PC2-Alumno 3\Documents\GitHub\Monogame_Proy7mo\SandBoxMG\obj\Debug\net6.0\SandBoxMG.pdb
 C:\Users\PC2-Alumno 3\Documents\GitHub\Monogame_Proy7mo\SandBoxMG\obj\Debug\net6.0\SandBoxMG.genruntimeconfig.cache
 C:\Users\PC2-Alumno 3\Documents\GitHub\Monogame_Proy7mo\SandBoxMG\obj\Debug\net6.0\ref\SandBoxMG.dll
+C:\Users\Carlos Lazcano\Documents\GitHub\Monogame\Monogame_Proy7mo\SandBoxMG\bin\Debug\net6.0\Content\Media\Sprites\rectangle.xnb

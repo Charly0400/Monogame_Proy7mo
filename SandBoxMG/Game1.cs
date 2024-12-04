@@ -94,7 +94,8 @@ namespace SandBoxMG
 
             base.Update(gameTime);
             InputManager.Update();
-            CGScene.UpdateScene();   
+            MMTestScene.UpdateScene();
+            //CGScene.UpdateScene();   
             Draw(gameTime);
         }
 
@@ -103,7 +104,7 @@ namespace SandBoxMG
             GraphicsDevice.Clear(Color.CornflowerBlue);
 
             _spriteBatch.Begin();
-            CGScene.RenderScene(_spriteBatch);
+            MMTestScene.RenderScene(_spriteBatch);
             _spriteBatch.End();
             base.Draw(gameTime);
         }
