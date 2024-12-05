@@ -1,5 +1,6 @@
 ﻿using SandBoxMG.Content.Code.Scenes.GameObjects.Components;
 using SandBoxMG.Content.Code.Scenes.GameObjects;
+using SandBoxMG.Content.Code.InputManager;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Content;
 using SandBoxMG.Content.Code.Scenes;
@@ -19,7 +20,6 @@ namespace SandBoxMG.Content.Code.Scenes
 {
     public class MainMenuScene : Scenes
     {
-
         public MainMenuScene()
         {
             _GameObjectsInTheScene = new List<GameObject>();
@@ -30,35 +30,53 @@ namespace SandBoxMG.Content.Code.Scenes
             MainMenuText(content);
             ButtonLocalitation(content);
             ButtonGame(content);
-            base.InitializeScene(content);     
+            base.InitializeScene(content);
+           
         }
 
-        #region Canvas
+        #region Botones
 
-        public void ButtonGame(ContentManager content) {
+        public void ButtonGame(ContentManager content)
+        {
             Vector2 _position = new Vector2(450, 450);
             Vector2 _collsionSize = new Vector2(190, 60);
 
             Button buttons = CreateGenericGameObject<Button>();
             buttons.SetButtonProperties(_position, _collsionSize, "Sprites/Boton", "       Play", content);
+            //TEST
+            //buttons.OnClick(() =>
+            //{
+            //    SceneManager.SetActiveScene(new Scenes(), content);
+            //});
+
+            _GameObjectsInTheScene.Add(buttons);
         }
 
-        public void ButtonLocalitation(ContentManager content) {
+        public void ButtonLocalitation(ContentManager content)
+        {
             Vector2 _position = new Vector2(100, 450);
             Vector2 _collsionSize = new Vector2(190, 60);
 
             //scriptcardsspawner();
             Button buttons = CreateGenericGameObject<Button>();
             buttons.SetButtonProperties(_position, _collsionSize, "Sprites/Boton", "  Localization", content);
+
+            _GameObjectsInTheScene.Add(buttons);
+
         }
 
-        public void MainMenuText(ContentManager content) {
+        public void MainMenuText(ContentManager content)
+        {
             Vector2 _position = new Vector2(275, 100);
 
-            Text buttons = CreateGenericGameObject<Text>();
-            buttons.SetPropertiesText(_position, "SIMIOJUEGO" , content);
+            Text text = CreateGenericGameObject<Text>();
+            text.SetPropertiesText(_position, "SIMIOJUEGO", content);
+
+            _GameObjectsInTheScene.Add(text);
         }
 
         #endregion
+
+
     }
 }

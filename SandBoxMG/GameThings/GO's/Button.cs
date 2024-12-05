@@ -16,9 +16,14 @@ namespace SandBoxMG.GameThings.GO_s
     public class Button : GameObject
     {
         private Vector2 _position;
-        private Vector2 _collsionSize;
+        private Vector2 _collisionSize;
         private String _textureName;
-        private String _text;
+        public String _text;
+
+        //TEST
+        private Action _onClick;
+
+        public bool IsClicked { get; private set; }
 
         public Button()
         {
@@ -28,9 +33,11 @@ namespace SandBoxMG.GameThings.GO_s
         public void SetButtonProperties(Vector2 postion, Vector2 collsiionSize, String nameTexture, String text, ContentManager content)
         {
             _position = postion;
-            _collsionSize = collsiionSize;
+            _collisionSize = collsiionSize;
             _textureName = nameTexture;
             _text = text;
+            //TEST
+            IsClicked = false;
             InitializeGameObject(content);
         }
 
@@ -44,7 +51,7 @@ namespace SandBoxMG.GameThings.GO_s
 
             CollisionComponent _collisionComponent = CreateGenericComponent<CollisionComponent>();
             _collisionComponent.InitializeComponent(this);
-            _collisionComponent.InitializeCollisionComponent(_collsionSize, this);
+            _collisionComponent.InitializeCollisionComponent(_collisionSize, this);
 
             TextComponent _textComponent = CreateGenericComponent<TextComponent>();
             _textComponent.InitializeTextComponent(_position);
@@ -56,10 +63,22 @@ namespace SandBoxMG.GameThings.GO_s
         public override void UpdateGameObject()
         {
             base.UpdateGameObject();
+            //TEST
+            if (InputManager.Clicked && new Rectangle((int)_position.X, (int)_position.Y, (int)_collisionSize.X, (int)_collisionSize.Y)
+                .Intersects(InputManager.mouseCursor))
+            {
+                Debug.WriteLine("HOLAHOLA");
+            }
         }
         public override void renderComponents(SpriteBatch _spriteBatch)
         {
             base.renderComponents(_spriteBatch);
+        }
+
+        //TEST
+        public void OnClick(Action onClickAction)
+        {
+            _onClick = onClickAction;
         }
     }
 }

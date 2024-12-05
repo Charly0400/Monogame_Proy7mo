@@ -45,8 +45,10 @@ namespace SandBoxMG
             _STSpeed = 100f;
             deadZone = 460;
             base.Initialize();
-            MMTestScene.InitializeScene(Content);
             //CGScene.InitializeScene(Content);
+            //TEST
+            //MMTestScene.InitializeScene(Content);
+            SceneManager.SetActiveScene(new MainMenuScene(), Content);
         }
 
         protected override void LoadContent()
@@ -94,8 +96,10 @@ namespace SandBoxMG
 
             base.Update(gameTime);
             InputManager.Update();
-            MMTestScene.UpdateScene();
             //CGScene.UpdateScene();   
+            //TEST
+            //MMTestScene.UpdateScene();
+            SceneManager.UpdateScene();
             Draw(gameTime);
         }
 
@@ -104,8 +108,10 @@ namespace SandBoxMG
             GraphicsDevice.Clear(Color.CornflowerBlue);
 
             _spriteBatch.Begin();
-            MMTestScene.RenderScene(_spriteBatch);
             //CGScene.RenderScene(_spriteBatch);
+            //TEST
+            //MMTestScene.RenderScene(_spriteBatch);
+            SceneManager.RenderScene(_spriteBatch);
             _spriteBatch.End();
             base.Draw(gameTime);
         }
