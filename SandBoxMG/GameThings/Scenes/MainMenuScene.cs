@@ -31,7 +31,7 @@ namespace SandBoxMG.Content.Code.Scenes
             ButtonLocalitation(content);
             ButtonGame(content);
             base.InitializeScene(content);
-           
+            Debug.WriteLine("Entra en initiliaze");
         }
 
         #region Botones
@@ -41,15 +41,14 @@ namespace SandBoxMG.Content.Code.Scenes
             Vector2 _position = new Vector2(450, 450);
             Vector2 _collsionSize = new Vector2(190, 60);
 
-            Button buttons = CreateGenericGameObject<Button>();
-            buttons.SetButtonProperties(_position, _collsionSize, "Sprites/Boton", "       Play", content);
-            //TEST
-            //buttons.OnClick(() =>
-            //{
+            Button ButtonGame = CreateGenericGameObject<Button>();
+            ButtonGame.SetButtonProperties(_position, _collsionSize, "Sprites/Boton", "       Play", content);
+            ////TEST
+            //buttons.OnClick(() => {
             //    SceneManager.SetActiveScene(new Scenes(), content);
             //});
-
-            _GameObjectsInTheScene.Add(buttons);
+            //ButtonGame.OnClick();
+            _GameObjectsInTheScene.Add(ButtonGame);
         }
 
         public void ButtonLocalitation(ContentManager content)

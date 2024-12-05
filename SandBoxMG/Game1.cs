@@ -24,6 +24,7 @@ namespace SandBoxMG
         public MainMenuScene MMTestScene;
         public CardsGameScene CGScene;
 
+
         public static SpriteFont _spriteFont { get; set; }
 
         public Game1()
@@ -35,7 +36,7 @@ namespace SandBoxMG
             Content.RootDirectory = "Content/Media";
             IsMouseVisible = true;
             MMTestScene = new MainMenuScene();
-            //CGScene = new CardsGameScene();
+            CGScene = new CardsGameScene();
         }
 
         protected override void Initialize()
@@ -47,8 +48,8 @@ namespace SandBoxMG
             base.Initialize();
             //CGScene.InitializeScene(Content);
             //TEST
+            SceneManager.StartScene(MMTestScene, Content);
             //MMTestScene.InitializeScene(Content);
-            SceneManager.SetActiveScene(new MainMenuScene(), Content);
         }
 
         protected override void LoadContent()
@@ -65,7 +66,7 @@ namespace SandBoxMG
         {
 
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Space))
-                MMTestScene.UnloadScene();
+                SceneManager.SetActiveScene(CGScene, Content);
 
             if (Joystick.LastConnectedIndex == 0)
             {
@@ -99,7 +100,7 @@ namespace SandBoxMG
             //CGScene.UpdateScene();   
             //TEST
             //MMTestScene.UpdateScene();
-            SceneManager.UpdateScene();
+            SceneManager.UpdateScene(MMTestScene);
             Draw(gameTime);
         }
 

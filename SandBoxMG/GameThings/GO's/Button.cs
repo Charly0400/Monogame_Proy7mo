@@ -5,11 +5,9 @@ using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Content;
 using System.Collections.Generic;
 using Microsoft.Xna.Framework;
-using System.Threading.Tasks;
-using System.Diagnostics;
-using System.Linq;
-using System.Text;
+using SandBoxMG.Content.Code.Scenes;
 using System;
+using System.Diagnostics;
 
 namespace SandBoxMG.GameThings.GO_s
 {
@@ -20,9 +18,12 @@ namespace SandBoxMG.GameThings.GO_s
         private String _textureName;
         public String _text;
 
+
+        public CardsGameScene CGScene;
         //TEST
         private Action _onClick;
 
+        private ContentManager contentManager;
         public bool IsClicked { get; private set; }
 
         public Button()
@@ -45,6 +46,8 @@ namespace SandBoxMG.GameThings.GO_s
         {
             _positionOfTheGameObject = _position;
 
+            contentManager = content;
+
             SpriteComponent _spriteComponent = CreateGenericComponent<SpriteComponent>();
             _spriteComponent.InitializeSpriteComponent(_position);
             _spriteComponent.LoadSpriteTexture(_textureName, content);
@@ -58,6 +61,7 @@ namespace SandBoxMG.GameThings.GO_s
             _textComponent.SetText(_text);
 
             base.InitializeGameObject(content);
+
         }
 
         public override void UpdateGameObject()
@@ -65,9 +69,9 @@ namespace SandBoxMG.GameThings.GO_s
             base.UpdateGameObject();
             //TEST
             if (InputManager.Clicked && new Rectangle((int)_position.X, (int)_position.Y, (int)_collisionSize.X, (int)_collisionSize.Y)
-                .Intersects(InputManager.mouseCursor))
+                .Intersects(InputManager.mouseCursor) )
             {
-                Debug.WriteLine("HOLAHOLA");
+                OnClick();
             }
         }
         public override void renderComponents(SpriteBatch _spriteBatch)
@@ -76,9 +80,11 @@ namespace SandBoxMG.GameThings.GO_s
         }
 
         //TEST
-        public void OnClick(Action onClickAction)
+        public virtual void OnClick()
         {
-            _onClick = onClickAction;
+            CGScene = new CardsGameScene();
+            SceneManager.SetActiveScene(CGScene, contentManager);
+
         }
     }
 }

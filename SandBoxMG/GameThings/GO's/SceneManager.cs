@@ -9,12 +9,18 @@ using System.Threading.Tasks;
 using System.Linq;
 using System.Text;
 using System;
+using System.Diagnostics;
 
 namespace SandBoxMG.GameThings.GO_s
 {
-    public class SceneManager : GameObject
+    public static class SceneManager 
     {
         private static Scenes _currentScene;
+
+        public static void StartScene(Scenes ActualScene, ContentManager content) {
+            _currentScene = ActualScene;
+            ActualScene.InitializeScene(content);
+        }
 
         public static void SetActiveScene(Scenes newScene, ContentManager content)
         {
@@ -23,7 +29,7 @@ namespace SandBoxMG.GameThings.GO_s
             _currentScene.InitializeScene(content);
         }
 
-        public static void UpdateScene()
+        public static void UpdateScene(Scenes ActualScene)
         {
             _currentScene?.UpdateScene();
         }
@@ -32,5 +38,6 @@ namespace SandBoxMG.GameThings.GO_s
         {
             _currentScene?.RenderScene(spriteBatch);
         }
+
     }
 }

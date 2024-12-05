@@ -29,7 +29,7 @@ namespace SandBoxMG.Content.Code.Scenes
 
         public void UpdateScene()
         {
-            foreach (GameObject gameObject in _GameObjectsInTheScene)
+            foreach (GameObject gameObject in _GameObjectsInTheScene.ToList<GameObject>())
             {
                 gameObject.UpdateGameObject();
             }
