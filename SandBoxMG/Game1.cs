@@ -15,7 +15,7 @@ namespace SandBoxMG
         Texture2D _SampleTexture;
         Vector2 _SampleTexturePos;
         float _STSpeed;
-        int deadZone; 
+        int deadZone;
 
         private GraphicsDeviceManager _graphics;
         private SpriteBatch _spriteBatch;
@@ -54,7 +54,7 @@ namespace SandBoxMG
             _spriteBatch = new SpriteBatch(GraphicsDevice);
 
             _spriteFont = Content.Load<SpriteFont>("Fonts/fontTest");
-          
+
             // TODO: use this.Content to load your game content here
 
         }
@@ -76,7 +76,7 @@ namespace SandBoxMG
                     _SampleTexturePos.Y -= updatedSampletextureSpeed;
                 }
                 else if (jstate.Axes[1] > deadZone)
-                { 
+                {
                     _SampleTexturePos.Y += updatedSampletextureSpeed;
                 }
 

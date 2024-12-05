@@ -13,7 +13,7 @@ using System;
 
 namespace SandBoxMG.GameThings.GO_s
 {
-        public class Button : GameObject
+    public class Button : GameObject
     {
         private Vector2 _position;
         private Vector2 _collsionSize;
@@ -22,7 +22,7 @@ namespace SandBoxMG.GameThings.GO_s
 
         public Button()
         {
-           
+
         }
 
         public void SetButtonProperties(Vector2 postion, Vector2 collsiionSize, String nameTexture, String text, ContentManager content)
@@ -38,7 +38,7 @@ namespace SandBoxMG.GameThings.GO_s
         {
             _positionOfTheGameObject = _position;
 
-             SpriteComponent _spriteComponent = CreateGenericComponent<SpriteComponent>();
+            SpriteComponent _spriteComponent = CreateGenericComponent<SpriteComponent>();
             _spriteComponent.InitializeSpriteComponent(_position);
             _spriteComponent.LoadSpriteTexture(_textureName, content);
 

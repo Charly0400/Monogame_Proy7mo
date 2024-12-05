@@ -6,6 +6,7 @@
   <SourceFiles>
     <File>C:/Users/Carlos Lazcano/Documents/GitHub/Monogame/Monogame_Proy7mo/SandBoxMG/Content/Media/Fonts/fontTest.spritefont</File>
     <File>C:/Users/Carlos Lazcano/Documents/GitHub/Monogame/Monogame_Proy7mo/SandBoxMG/Content/Media/Sprites/abrams.png</File>
+    <File>C:/Users/Carlos Lazcano/Documents/GitHub/Monogame/Monogame_Proy7mo/SandBoxMG/Content/Media/Sprites/Boton.jpeg</File>
     <File>C:/Users/Carlos Lazcano/Documents/GitHub/Monogame/Monogame_Proy7mo/SandBoxMG/Content/Media/Sprites/churchill.png</File>
     <File>C:/Users/Carlos Lazcano/Documents/GitHub/Monogame/Monogame_Proy7mo/SandBoxMG/Content/Media/Sprites/Custom Edited - Sonic the Hedgehog Customs - Sonic American Design SMS-Style.png</File>
     <File>C:/Users/Carlos Lazcano/Documents/GitHub/Monogame/Monogame_Proy7mo/SandBoxMG/Content/Media/Sprites/is_7.png</File>
@@ -13,6 +14,9 @@
     <File>C:/Users/Carlos Lazcano/Documents/GitHub/Monogame/Monogame_Proy7mo/SandBoxMG/Content/Media/Sprites/onichan.png</File>
     <File>C:/Users/Carlos Lazcano/Documents/GitHub/Monogame/Monogame_Proy7mo/SandBoxMG/Content/Media/Sprites/pizzaCheck.png</File>
     <File>C:/Users/Carlos Lazcano/Documents/GitHub/Monogame/Monogame_Proy7mo/SandBoxMG/Content/Media/Sprites/Portada.png</File>
+    <File>C:/Users/Carlos Lazcano/Documents/GitHub/Monogame/Monogame_Proy7mo/SandBoxMG/Content/Media/Sprites/rectangle_170x50.png</File>
+    <File>C:/Users/Carlos Lazcano/Documents/GitHub/Monogame/Monogame_Proy7mo/SandBoxMG/Content/Media/Sprites/rectangle_190x50.png</File>
+    <File>C:/Users/Carlos Lazcano/Documents/GitHub/Monogame/Monogame_Proy7mo/SandBoxMG/Content/Media/Sprites/rectangle_190x60.png</File>
     <File>C:/Users/Carlos Lazcano/Documents/GitHub/Monogame/Monogame_Proy7mo/SandBoxMG/Content/Media/Sprites/rectangle.png</File>
     <File>C:/Users/Carlos Lazcano/Documents/GitHub/Monogame/Monogame_Proy7mo/SandBoxMG/Content/Media/Sprites/SingleSanic.png</File>
     <File>C:/Users/Carlos Lazcano/Documents/GitHub/Monogame/Monogame_Proy7mo/SandBoxMG/Content/Media/Sprites/sonic.gif</File>
@@ -20,6 +24,10 @@
     <File>C:/Users/Carlos Lazcano/Documents/GitHub/Monogame/Monogame_Proy7mo/SandBoxMG/Content/Media/Sprites/ztz.png</File>
   </SourceFiles>
   <DestFiles>
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />

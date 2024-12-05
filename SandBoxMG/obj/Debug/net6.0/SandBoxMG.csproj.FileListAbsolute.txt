@@ -140,3 +140,7 @@ C:\Users\PC2-Alumno 6\Documents\Github\Monogame_Proy7mo\SandBoxMG\bin\Debug\net6
 C:\Users\PC2-Alumno 6\Documents\Github\Monogame_Proy7mo\SandBoxMG\bin\Debug\net6.0\Content\Media\Sprites\rectangle.xnb
 C:\Users\PC2-Alumno 6\Documents\Github\Monogame_Proy7mo\SandBoxMG\bin\Debug\net6.0\Content\Media\Sprites\tiger.xnb
 C:\Users\PC2-Alumno 6\Documents\Github\Monogame_Proy7mo\SandBoxMG\bin\Debug\net6.0\Content\Media\Sprites\ztz.xnb
+C:\Users\Carlos Lazcano\Documents\GitHub\Monogame\Monogame_Proy7mo\SandBoxMG\bin\Debug\net6.0\Content\Media\Sprites\rectangle_170x50.xnb
+C:\Users\Carlos Lazcano\Documents\GitHub\Monogame\Monogame_Proy7mo\SandBoxMG\bin\Debug\net6.0\Content\Media\Sprites\rectangle_190x50.xnb
+C:\Users\Carlos Lazcano\Documents\GitHub\Monogame\Monogame_Proy7mo\SandBoxMG\bin\Debug\net6.0\Content\Media\Sprites\rectangle_190x60.xnb
+C:\Users\Carlos Lazcano\Documents\GitHub\Monogame\Monogame_Proy7mo\SandBoxMG\bin\Debug\net6.0\Content\Media\Sprites\Boton.xnb

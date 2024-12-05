@@ -37,26 +37,26 @@ namespace SandBoxMG.Content.Code.Scenes
 
         public void ButtonGame(ContentManager content) {
             Vector2 _position = new Vector2(450, 450);
-            Vector2 _collsionSize = new Vector2(150, 150);
+            Vector2 _collsionSize = new Vector2(190, 60);
 
             Button buttons = CreateGenericGameObject<Button>();
-            buttons.SetButtonProperties(_position, _collsionSize, "Sprites/pizzaCheck", "Play", content);
+            buttons.SetButtonProperties(_position, _collsionSize, "Sprites/Boton", "       Play", content);
         }
 
         public void ButtonLocalitation(ContentManager content) {
             Vector2 _position = new Vector2(100, 450);
-            Vector2 _collsionSize = new Vector2(150, 150);
+            Vector2 _collsionSize = new Vector2(190, 60);
 
             //scriptcardsspawner();
             Button buttons = CreateGenericGameObject<Button>();
-            buttons.SetButtonProperties(_position, _collsionSize, "Sprites/abrams", "Localization", content);
+            buttons.SetButtonProperties(_position, _collsionSize, "Sprites/Boton", "  Localization", content);
         }
 
         public void MainMenuText(ContentManager content) {
-            Vector2 _position = new Vector2(100, 100);
+            Vector2 _position = new Vector2(275, 100);
 
-            Button buttons = CreateGenericGameObject<Button>();
-            buttons.SetButtonProperties(_position, Vector2.One, "Sprites/rectangle" , "Localization", content);
+            Text buttons = CreateGenericGameObject<Text>();
+            buttons.SetPropertiesText(_position, "SIMIOJUEGO" , content);
         }
 
         #endregion
