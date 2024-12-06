@@ -98,7 +98,6 @@ namespace SandBoxMG
             base.Update(gameTime);
             InputManager.Update();
             //CGScene.UpdateScene();   
-            //TEST
             //MMTestScene.UpdateScene();
             SceneManager.UpdateScene(MMTestScene);
             Draw(gameTime);
@@ -110,7 +109,6 @@ namespace SandBoxMG
 
             _spriteBatch.Begin();
             //CGScene.RenderScene(_spriteBatch);
-            //TEST
             //MMTestScene.RenderScene(_spriteBatch);
             SceneManager.RenderScene(_spriteBatch);
             _spriteBatch.End();

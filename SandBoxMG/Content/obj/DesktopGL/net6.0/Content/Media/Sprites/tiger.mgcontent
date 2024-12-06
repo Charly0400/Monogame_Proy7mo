@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <SourceFile>C:/Users/PC2-Alumno 6/Documents/Github/Monogame_Proy7mo/SandBoxMG/Content/Media/Sprites/tiger.png</SourceFile>
-  <SourceTime>2024-12-04T07:03:27.0347205-06:00</SourceTime>
-  <DestFile>C:/Users/PC2-Alumno 6/Documents/Github/Monogame_Proy7mo/SandBoxMG/Content/bin/DesktopGL/Content/Media/Sprites/tiger.xnb</DestFile>
-  <DestTime>2024-12-05T07:00:47.0966591-06:00</DestTime>
+  <SourceFile>C:/Users/Carlos Lazcano/Documents/GitHub/Monogame/Monogame_Proy7mo/SandBoxMG/Content/Media/Sprites/tiger.png</SourceFile>
+  <SourceTime>2024-12-03T23:11:03.3739781-06:00</SourceTime>
+  <DestFile>C:/Users/Carlos Lazcano/Documents/GitHub/Monogame/Monogame_Proy7mo/SandBoxMG/Content/bin/DesktopGL/Content/Media/Sprites/tiger.xnb</DestFile>
+  <DestTime>2024-12-05T17:25:18.6470302-06:00</DestTime>
   <Importer>TextureImporter</Importer>
   <ImporterTime>2022-07-26T06:44:56-05:00</ImporterTime>
   <Processor>TextureProcessor</Processor>

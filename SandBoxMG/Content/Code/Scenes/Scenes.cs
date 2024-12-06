@@ -27,7 +27,7 @@ namespace SandBoxMG.Content.Code.Scenes
             }
         }
 
-        public void UpdateScene()
+        public virtual void UpdateScene()
         {
             foreach (GameObject gameObject in _GameObjectsInTheScene.ToList<GameObject>())
             {

@@ -35,6 +35,7 @@ namespace SandBoxMG.Content.Code.Scenes.GameObjects.Components
         public void LoadSpriteTexture(string _TextureName, ContentManager content)
         {
             _Texture = content.Load<Texture2D>(_TextureName);
+
         }
 
         public override void RenderComponent(SpriteBatch _spriteBatch)

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <SourceFile>C:/Users/PC2-Alumno 6/Documents/Github/Monogame_Proy7mo/SandBoxMG/Content/Media/Sprites/landsverk.png</SourceFile>
-  <SourceTime>2024-12-04T07:03:27.0334917-06:00</SourceTime>
-  <DestFile>C:/Users/PC2-Alumno 6/Documents/Github/Monogame_Proy7mo/SandBoxMG/Content/bin/DesktopGL/Content/Media/Sprites/landsverk.xnb</DestFile>
-  <DestTime>2024-12-05T07:00:47.0515696-06:00</DestTime>
+  <SourceFile>C:/Users/Carlos Lazcano/Documents/GitHub/Monogame/Monogame_Proy7mo/SandBoxMG/Content/Media/Sprites/landsverk.png</SourceFile>
+  <SourceTime>2024-12-03T23:11:46.4637199-06:00</SourceTime>
+  <DestFile>C:/Users/Carlos Lazcano/Documents/GitHub/Monogame/Monogame_Proy7mo/SandBoxMG/Content/bin/DesktopGL/Content/Media/Sprites/landsverk.xnb</DestFile>
+  <DestTime>2024-12-05T17:25:18.5994396-06:00</DestTime>
   <Importer>TextureImporter</Importer>
   <ImporterTime>2022-07-26T06:44:56-05:00</ImporterTime>
   <Processor>TextureProcessor</Processor>

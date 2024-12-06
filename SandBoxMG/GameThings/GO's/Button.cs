@@ -79,7 +79,6 @@ namespace SandBoxMG.GameThings.GO_s
             base.renderComponents(_spriteBatch);
         }
 
-        //TEST
         public virtual void OnClick()
         {
             CGScene = new CardsGameScene();

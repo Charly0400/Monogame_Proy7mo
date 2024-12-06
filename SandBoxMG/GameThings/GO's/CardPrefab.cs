@@ -1,15 +1,15 @@
-﻿using Microsoft.Xna.Framework.Content;
-using Microsoft.Xna.Framework.Graphics;
-using SandBoxMG.Content.Code.Scenes.GameObjects.Components;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using SandBoxMG.Content.Code.Scenes.GameObjects.Components;
 using SandBoxMG.Content.Code.Scenes.GameObjects;
 using SandBoxMG.Content.Code.InputManager;
+using Microsoft.Xna.Framework.Graphics;
+using Microsoft.Xna.Framework.Content;
+using System.Collections.Generic;
 using Microsoft.Xna.Framework;
+using System.Threading.Tasks;
 using System.Diagnostics;
+using System.Linq;
+using System.Text;
+using System;
 
 namespace SandBoxMG.GameThings.GO_s
 {
@@ -20,47 +20,47 @@ namespace SandBoxMG.GameThings.GO_s
         private string prefabTextureName;
         private string prefabBaseCard;
         private string currentTexture;
-        private bool switchTexture;
 
-        private string prefabText;
+        private SpriteComponent spriteComponent;
+        private ContentManager contentManager;
 
         private bool IsDiscover = false;
         public int Index = 0;
-        public CardPrefab() 
-        {
 
-        }
-        public CardPrefab(Vector2 position, Vector2 collisionSize, string textureName, string baseCard) 
-        {
-            prefabPosition = position;
-            prefabCollisionSize = collisionSize;
-            prefabTextureName = textureName;
-            prefabBaseCard = baseCard;
+        //TEST
+        private double lastClickTime = 0;
+        private const double clickCooldown = 200;
+        private double globalTime = 0;
 
-
-        }
-
+        public CardPrefab() { }
+        
         public override void InitializeGameObject(ContentManager content)
         {
             currentTexture = prefabBaseCard;
-            SpriteComponent _spriteComponent = CreateGenericComponent<SpriteComponent>();
-            _spriteComponent.InitializeSpriteComponent(prefabPosition);
-            _spriteComponent.LoadSpriteTexture(currentTexture, content);
+            contentManager = content;
 
-            CollisionComponent _collisionComponent = CreateGenericComponent<CollisionComponent>();
-            _collisionComponent.InitializeComponent(this);
-            _collisionComponent.InitializeCollisionComponent(prefabCollisionSize, this);
+            spriteComponent = CreateGenericComponent<SpriteComponent>();
+            spriteComponent.InitializeSpriteComponent(prefabPosition);
+            spriteComponent.LoadSpriteTexture(currentTexture, content);
+
+            CollisionComponent collisionComponent = CreateGenericComponent<CollisionComponent>();
+            collisionComponent.InitializeComponent(this);
+            collisionComponent.InitializeCollisionComponent(prefabCollisionSize, this);
 
             base.InitializeGameObject(content);
         }
 
         public override void UpdateGameObject()
         {
-
             base.UpdateGameObject();
-            if (InputManager.Clicked && new Rectangle((int)prefabPosition.X, (int)prefabPosition.Y, (int)prefabCollisionSize.X, (int)prefabCollisionSize.Y)
-               .Intersects(InputManager.mouseCursor)) {
+
+            if (InputManager.Clicked && 
+                new Rectangle((int)prefabPosition.X, (int)prefabPosition.Y, 
+                (int)prefabCollisionSize.X, (int)prefabCollisionSize.Y)
+               .Intersects(InputManager.mouseCursor))
+            {
                 OnClick();
+
             }
         }
         public override void renderComponents(SpriteBatch _spriteBatch)
@@ -75,28 +75,26 @@ namespace SandBoxMG.GameThings.GO_s
             prefabTextureName = textureName;
             prefabBaseCard = baseCard;
 
+            currentTexture = prefabBaseCard; 
             _positionOfTheGameObject = prefabPosition;
 
         }
 
         public void OnClick() {
 
-            if (switchTexture != !switchTexture) {
-
-                if (currentTexture == prefabTextureName) {
-                    currentTexture = prefabBaseCard;
-                    Debug.WriteLine("CartaBase");
-                }
-
-                else if (currentTexture == prefabBaseCard) {
-                    currentTexture = prefabTextureName;
-                    Debug.WriteLine("tanqueALV");
-                }
-
-                switchTexture = !switchTexture;
+            if (IsDiscover = !IsDiscover)
+            {
+                currentTexture = prefabTextureName;
+                Debug.WriteLine("Carta volteada");
+                spriteComponent.LoadSpriteTexture(currentTexture, contentManager);
             }
-            //this.UnloadGameObject();
-        }
+            else
+            {
+                currentTexture = prefabBaseCard;
+                Debug.WriteLine("Carta base");
+                spriteComponent.LoadSpriteTexture(currentTexture, contentManager);
 
+            }
+        }
     }
 }

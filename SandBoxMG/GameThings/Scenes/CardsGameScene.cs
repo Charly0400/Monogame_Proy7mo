@@ -1,20 +1,21 @@
-﻿using Microsoft.Xna.Framework.Content;
+﻿using SandBoxMG.Content.Code.Scenes.GameObjects;
 using Microsoft.Xna.Framework.Graphics;
+using Microsoft.Xna.Framework.Content;
 using SandBoxMG.Content.Code.Scenes;
-using SandBoxMG.Content.Code.Scenes.GameObjects;
-using SandBoxMG.GameThings;
-using SandBoxMG.GameThings.GO_s;
-using System;
-using System.Collections;
 using System.Collections.Generic;
+using SandBoxMG.GameThings.GO_s;
+using Microsoft.Xna.Framework;
+using System.Threading.Tasks;
+using SandBoxMG.GameThings;
+using System.Collections;
 using System.Diagnostics;
 using System.Linq;
-using System.Numerics;
 using System.Text;
-using System.Threading.Tasks;
+using System;
 
 namespace SandBoxMG.Content.Code.Scenes {
     public class CardsGameScene : Scenes {
+
         public CardsGameScene() {
             _GameObjectsInTheScene = new List<GameObject>();
         }
@@ -33,12 +34,12 @@ namespace SandBoxMG.Content.Code.Scenes {
 
                 Vector2 position = startOffset + new Vector2(col * (cardSize.X), row * (cardSize.Y));
 
-                card.SetPrefabProperties(position, cardSize, "Sprites/onichan", "Sprites/Portada");
+                card.SetPrefabProperties(position, cardSize, "Sprites/is_7", "Sprites/Portada");
                 card.InitializeGameObject(content);
                 _GameObjectsInTheScene.Add(card);
 
             }
-        }
+        }     
     }
 }
 
