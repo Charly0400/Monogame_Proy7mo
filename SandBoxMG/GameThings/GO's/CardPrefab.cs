@@ -23,12 +23,11 @@ namespace SandBoxMG.GameThings.GO_s
 
         private SpriteComponent spriteComponent;
         private ContentManager contentManager;
+        //TEST
+        public GameManager GameManager { get; set; }
 
         private bool isDiscover = false;
         public int index = 0;
-
-        //TEST
-        private bool isClickable = true;
 
         public CardPrefab() { }
         
@@ -80,27 +79,50 @@ namespace SandBoxMG.GameThings.GO_s
 
         public void OnClick() {
 
-            if (!isClickable)
-            {
-                if (isDiscover == false && currentTexture == prefabBaseCard)
-                {
-                    currentTexture = prefabTextureName;
-                    Debug.WriteLine("Carta volteada");
-                    spriteComponent.LoadSpriteTexture(currentTexture, contentManager);
-                    isDiscover = true;
-                }
-                else if (isDiscover == true && currentTexture == prefabTextureName)
-                {
-                    currentTexture = prefabBaseCard;
-                    Debug.WriteLine("Carta base");
-                    spriteComponent.LoadSpriteTexture(currentTexture, contentManager);
-                    isDiscover = false;
-                }
+            //    if (!isClickable)
+            //    {
+            //        if (isDiscover == false && currentTexture == prefabBaseCard)
+            //        {
+            //            currentTexture = prefabTextureName;
+            //            Debug.WriteLine("Carta volteada");
+            //            Debug.WriteLine(index);
+            //            spriteComponent.LoadSpriteTexture(currentTexture, contentManager);
+            //            isDiscover = true;
+            //        }
+            //        else if (isDiscover == true && currentTexture == prefabTextureName)
+            //        {
+            //            currentTexture = prefabBaseCard;
+            //            Debug.WriteLine("Carta base");
+            //            spriteComponent.LoadSpriteTexture(currentTexture, contentManager);
+            //            isDiscover = false;
+            //        }
 
+            //    }
+
+            //    isClickable = false;
+            //    Task.Delay(10).ContinueWith(_ => isClickable = true);
+
+            //TEST GAME MANAGER
+            if (!isDiscover)
+            {
+                // Voltear la carta
+                currentTexture = prefabTextureName;
+                spriteComponent.LoadSpriteTexture(currentTexture, contentManager);
+                isDiscover = true;
+
+                // Notificar al GameManager que esta carta ha sido seleccionada
+                GameManager?.OnCardSelected(this);
             }
 
-            isClickable = false;
-            Task.Delay(10).ContinueWith(_ => isClickable = true);
+        }
+
+        //TEST
+        public void FlipBack()
+        {
+            // Volver a la textura base
+            currentTexture = prefabBaseCard;
+            spriteComponent.LoadSpriteTexture(currentTexture, contentManager);
+            isDiscover = false;
         }
     }
 }

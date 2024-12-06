@@ -1,12 +1,12 @@
-﻿using Microsoft.Xna.Framework;
+﻿using SandBoxMG.Content.Code.InputManager;
 using Microsoft.Xna.Framework.Input;
-using SandBoxMG.Content.Code.InputManager;
-using System;
 using System.Collections.Generic;
+using Microsoft.Xna.Framework;
+using System.Threading.Tasks;
 using System.Diagnostics;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
+using System;
 
 namespace SandBoxMG.Content.Code.Scenes.GameObjects.Components {
     public class CollisionComponent : Component {
@@ -27,15 +27,15 @@ namespace SandBoxMG.Content.Code.Scenes.GameObjects.Components {
 
         public override void UpdateComponent() {
 
-            if (InputManager.InputManager.Clicked)
-            {
-                Debug.WriteLine(InputManager.InputManager.mouseCursor);
-                if (InputManager.InputManager.mouseCursor.Intersects(_collisionRectangle))
-                {
-                    Debug.WriteLine("Choca con collider");
+            //if (InputManager.InputManager.Clicked)
+            //{
+            //    Debug.WriteLine(InputManager.InputManager.mouseCursor);
+            //    if (InputManager.InputManager.mouseCursor.Intersects(_collisionRectangle))
+            //    {
+            //        Debug.WriteLine("Choca con collider");
 
-                }
-            }
+            //    }
+            //}
         }
     }
 }

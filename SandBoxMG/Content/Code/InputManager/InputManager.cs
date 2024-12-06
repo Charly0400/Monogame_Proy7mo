@@ -21,27 +21,28 @@ namespace SandBoxMG.Content.Code.InputManager
 
         public static void Update()
         {
-            //LastMouseState = MouseState;
-            //MouseState = Mouse.GetState();
-            //if ((MouseState.LeftButton == ButtonState.Pressed) && (LastMouseState.LeftButton == ButtonState.Released))
-            //{
-            //    Clicked = true;
-            //}
-            //else
-            //{
-            //    Clicked = false;
-            //}
-            //mouseCursor = new(MouseState.Position,new(1, 1));
+            LastMouseState = MouseState;
+            MouseState = Mouse.GetState();
+            if ((MouseState.LeftButton == ButtonState.Pressed) && (LastMouseState.LeftButton == ButtonState.Released))
+            {
+                Clicked = true;
+            }
+            else
+            {
+                Clicked = false;
+            }
+            mouseCursor = new(MouseState.Position, new(1, 1));
 
-            MouseState mouseState = Mouse.GetState();
+            //TEST
+            //MouseState mouseState = Mouse.GetState();
 
-            // Detectar transición de no presionado a presionado
-            bool isMouseDown = mouseState.LeftButton == ButtonState.Pressed;
-            Clicked = isMouseDown && !previousMouseState;
+            //// Detectar transición de no presionado a presionado
+            //bool isMouseDown = mouseState.LeftButton == ButtonState.Pressed;
+            //Clicked = isMouseDown && !previousMouseState;
 
-            previousMouseState = isMouseDown;
+            //previousMouseState = isMouseDown;
 
-            mouseCursor = new Rectangle(mouseState.X, mouseState.Y, 1, 1);
+            mouseCursor = new Rectangle(MouseState.X, MouseState.Y, 1, 1);
         }
 
     }

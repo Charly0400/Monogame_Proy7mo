@@ -15,18 +15,43 @@ using System;
 
 namespace SandBoxMG.Content.Code.Scenes {
     public class CardsGameScene : Scenes {
-
+        //TEST
+        private GameManager gameManager;
         public CardsGameScene() {
             _GameObjectsInTheScene = new List<GameObject>();
+            //TEST
+            gameManager = new GameManager(this);
         }
         public override void InitializeScene(ContentManager content) {
-
-            //TestGO testGO = CreateGenericGameObject<TestGO>();
             base.InitializeScene(content);
+
+            #region Variables
+
             int cardsPerRow = 4;
             Vector2 cardSize = new Vector2(157.5f, 157.5f);
             Vector2 startOffset = new Vector2(55, 55);
-            for (int i = 0; i < 16; i++) {
+
+            var cardTypes = new List<(string textureName, int index)> {
+                ("Sprites/abrams", 1),
+                ("Sprites/churchill", 2),
+                ("Sprites/landsverk", 3),
+                ("Sprites/pizzaCheck", 4),
+                ("Sprites/onichan", 5),
+                ("Sprites/tiger", 6),
+                ("Sprites/is_7", 7),
+                ("Sprites/ztz", 8),
+            };
+
+            var cardPool = cardTypes.SelectMany(card => Enumerable.Repeat(card, 2)).ToList();
+
+            var random = new Random();
+            cardPool = cardPool.OrderBy( _ => random.Next()).ToList();
+
+            #endregion
+
+            for (int i = 0; i < cardPool.Count; i++)
+            {
+                var (textureName, index) = cardPool[i];
                 CardPrefab card = CreateGenericGameObject<CardPrefab>();
 
                 int row = i / cardsPerRow;
@@ -34,12 +59,16 @@ namespace SandBoxMG.Content.Code.Scenes {
 
                 Vector2 position = startOffset + new Vector2(col * (cardSize.X), row * (cardSize.Y));
 
-                card.SetPrefabProperties(position, cardSize, "Sprites/is_7", "Sprites/Portada");
+                card.SetPrefabProperties(position, cardSize, textureName, "Sprites/Portada", index);
                 card.InitializeGameObject(content);
+                card.GameManager = gameManager;
                 _GameObjectsInTheScene.Add(card);
-
-            }
-        }     
+            }           
+        }
+        public void RemoveCardFromScene(CardPrefab card)
+        {
+            _GameObjectsInTheScene.Remove(card);
+        }
     }
 }
 
