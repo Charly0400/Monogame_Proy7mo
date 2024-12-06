@@ -24,13 +24,11 @@ namespace SandBoxMG.GameThings.GO_s
         private SpriteComponent spriteComponent;
         private ContentManager contentManager;
 
-        private bool IsDiscover = false;
-        public int Index = 0;
+        private bool isDiscover = false;
+        public int index = 0;
 
         //TEST
-        private double lastClickTime = 0;
-        private const double clickCooldown = 200;
-        private double globalTime = 0;
+        private bool isClickable = true;
 
         public CardPrefab() { }
         
@@ -60,7 +58,6 @@ namespace SandBoxMG.GameThings.GO_s
                .Intersects(InputManager.mouseCursor))
             {
                 OnClick();
-
             }
         }
         public override void renderComponents(SpriteBatch _spriteBatch)
@@ -68,12 +65,13 @@ namespace SandBoxMG.GameThings.GO_s
             base.renderComponents(_spriteBatch);
         }
 
-        public void SetPrefabProperties(Vector2 position, Vector2 collisionSize, string textureName, string baseCard)
+        public void SetPrefabProperties(Vector2 position, Vector2 collisionSize, string textureName, string baseCard, int indexCard)
         {
             prefabPosition = position;
             prefabCollisionSize = collisionSize;
             prefabTextureName = textureName;
             prefabBaseCard = baseCard;
+            index = indexCard;
 
             currentTexture = prefabBaseCard; 
             _positionOfTheGameObject = prefabPosition;
@@ -82,19 +80,27 @@ namespace SandBoxMG.GameThings.GO_s
 
         public void OnClick() {
 
-            if (IsDiscover = !IsDiscover)
+            if (!isClickable)
             {
-                currentTexture = prefabTextureName;
-                Debug.WriteLine("Carta volteada");
-                spriteComponent.LoadSpriteTexture(currentTexture, contentManager);
-            }
-            else
-            {
-                currentTexture = prefabBaseCard;
-                Debug.WriteLine("Carta base");
-                spriteComponent.LoadSpriteTexture(currentTexture, contentManager);
+                if (isDiscover == false && currentTexture == prefabBaseCard)
+                {
+                    currentTexture = prefabTextureName;
+                    Debug.WriteLine("Carta volteada");
+                    spriteComponent.LoadSpriteTexture(currentTexture, contentManager);
+                    isDiscover = true;
+                }
+                else if (isDiscover == true && currentTexture == prefabTextureName)
+                {
+                    currentTexture = prefabBaseCard;
+                    Debug.WriteLine("Carta base");
+                    spriteComponent.LoadSpriteTexture(currentTexture, contentManager);
+                    isDiscover = false;
+                }
 
             }
+
+            isClickable = false;
+            Task.Delay(10).ContinueWith(_ => isClickable = true);
         }
     }
 }

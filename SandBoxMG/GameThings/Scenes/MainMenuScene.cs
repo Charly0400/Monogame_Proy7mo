@@ -43,11 +43,7 @@ namespace SandBoxMG.Content.Code.Scenes
 
             Button ButtonGame = CreateGenericGameObject<Button>();
             ButtonGame.SetButtonProperties(_position, _collsionSize, "Sprites/Boton", "       Play", content);
-            ////TEST
-            //buttons.OnClick(() => {
-            //    SceneManager.SetActiveScene(new Scenes(), content);
-            //});
-            //ButtonGame.OnClick();
+
             _GameObjectsInTheScene.Add(ButtonGame);
         }
 
