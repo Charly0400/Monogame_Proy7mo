@@ -15,11 +15,10 @@ using System;
 
 namespace SandBoxMG.Content.Code.Scenes {
     public class CardsGameScene : Scenes {
-        //TEST
+
         private GameManager gameManager;
         public CardsGameScene() {
             _GameObjectsInTheScene = new List<GameObject>();
-            //TEST
             gameManager = new GameManager(this);
         }
         public override void InitializeScene(ContentManager content) {
@@ -67,7 +66,12 @@ namespace SandBoxMG.Content.Code.Scenes {
         }
         public void RemoveCardFromScene(CardPrefab card)
         {
-            _GameObjectsInTheScene.Remove(card);
+            Task.Delay(600).ContinueWith(_ =>
+            {
+                card.UnloadGameObject();
+
+            });
+            //_GameObjectsInTheScene.Remove(card);
         }
     }
 }

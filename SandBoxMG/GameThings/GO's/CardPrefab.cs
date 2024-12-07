@@ -79,33 +79,31 @@ namespace SandBoxMG.GameThings.GO_s
 
         public void OnClick() {
 
-            //    if (!isClickable)
+            //if (!isClickable)
+            //{
+            //    if (isDiscover == false && currentTexture == prefabBaseCard)
             //    {
-            //        if (isDiscover == false && currentTexture == prefabBaseCard)
-            //        {
-            //            currentTexture = prefabTextureName;
-            //            Debug.WriteLine("Carta volteada");
-            //            Debug.WriteLine(index);
-            //            spriteComponent.LoadSpriteTexture(currentTexture, contentManager);
-            //            isDiscover = true;
-            //        }
-            //        else if (isDiscover == true && currentTexture == prefabTextureName)
-            //        {
-            //            currentTexture = prefabBaseCard;
-            //            Debug.WriteLine("Carta base");
-            //            spriteComponent.LoadSpriteTexture(currentTexture, contentManager);
-            //            isDiscover = false;
-            //        }
-
+            //        currentTexture = prefabTextureName;
+            //        Debug.WriteLine("Carta volteada");
+            //        Debug.WriteLine(index);
+            //        spriteComponent.LoadSpriteTexture(currentTexture, contentManager);
+            //        isDiscover = true;
+            //    }
+            //    else if (isDiscover == true && currentTexture == prefabTextureName)
+            //    {
+            //        currentTexture = prefabBaseCard;
+            //        Debug.WriteLine("Carta base");
+            //        spriteComponent.LoadSpriteTexture(currentTexture, contentManager);
+            //        isDiscover = false;
             //    }
 
-            //    isClickable = false;
-            //    Task.Delay(10).ContinueWith(_ => isClickable = true);
+            //}
 
-            //TEST GAME MANAGER
+            //isClickable = false;
+            //Task.Delay(10).ContinueWith(_ => isClickable = true);
+
             if (!isDiscover)
             {
-                // Voltear la carta
                 currentTexture = prefabTextureName;
                 spriteComponent.LoadSpriteTexture(currentTexture, contentManager);
                 isDiscover = true;
@@ -115,11 +113,8 @@ namespace SandBoxMG.GameThings.GO_s
             }
 
         }
-
-        //TEST
         public void FlipBack()
         {
-            // Volver a la textura base
             currentTexture = prefabBaseCard;
             spriteComponent.LoadSpriteTexture(currentTexture, contentManager);
             isDiscover = false;

@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace SandBoxMG.Content.Code.Scenes.GameObjects.Components 
 {
-    internal class TextComponent : Component
+    public class TextComponent : Component
     {
         #region Variables
 

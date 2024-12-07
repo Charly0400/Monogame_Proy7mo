@@ -11,25 +11,19 @@ using System.Diagnostics;
 
 namespace SandBoxMG.GameThings.GO_s
 {
-    public class Button : GameObject
+    public class ButtonGame : GameObject
     {
         private Vector2 _position;
         private Vector2 _collisionSize;
         private String _textureName;
         public String _text;
 
-
         public CardsGameScene CGScene;
-        //TEST
-        private Action _onClick;
 
         private ContentManager contentManager;
-        public bool IsClicked { get; private set; }
 
-        public Button()
-        {
 
-        }
+        public ButtonGame() { }
 
         public void SetButtonProperties(Vector2 postion, Vector2 collsiionSize, String nameTexture, String text, ContentManager content)
         {
@@ -37,8 +31,7 @@ namespace SandBoxMG.GameThings.GO_s
             _collisionSize = collsiionSize;
             _textureName = nameTexture;
             _text = text;
-            //TEST
-            IsClicked = false;
+
             InitializeGameObject(content);
         }
 
@@ -61,13 +54,11 @@ namespace SandBoxMG.GameThings.GO_s
             _textComponent.SetText(_text);
 
             base.InitializeGameObject(content);
-
         }
 
         public override void UpdateGameObject()
         {
             base.UpdateGameObject();
-            //TEST
             if (InputManager.Clicked && new Rectangle((int)_position.X, (int)_position.Y, (int)_collisionSize.X, (int)_collisionSize.Y)
                 .Intersects(InputManager.mouseCursor) )
             {
@@ -83,7 +74,6 @@ namespace SandBoxMG.GameThings.GO_s
         {
             CGScene = new CardsGameScene();
             SceneManager.SetActiveScene(CGScene, contentManager);
-
         }
     }
 }

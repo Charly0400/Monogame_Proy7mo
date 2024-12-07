@@ -21,43 +21,35 @@ namespace SandBoxMG.GameThings.GO_s
 
         public void OnCardSelected(CardPrefab card)
         {
-            // Evitar seleccionar más de dos cartas
             if (selectedCards.Count >= 2 || selectedCards.Contains(card))
                 return;
 
-            // Agregar la carta seleccionada
             selectedCards.Add(card);
 
-            // Si ya hay dos cartas seleccionadas, evaluarlas
             if (selectedCards.Count == 2)
             {
-                EvaluateSelectedCards();
+                CheckSelectedCards();
             }
         }
 
-        private void EvaluateSelectedCards()
+        private void CheckSelectedCards()
         {
-            // Obtener las dos cartas seleccionadas
             var firstCard = selectedCards[0];
             var secondCard = selectedCards[1];
 
-            // Si coinciden (mismo índice)
             if (firstCard.index == secondCard.index)
             {
-                // Eliminarlas de la escena
                 gameScene.RemoveCardFromScene(firstCard);
                 gameScene.RemoveCardFromScene(secondCard);
             }
             else
             {
-                // Voltearlas nuevamente después de un pequeño retraso
                 Task.Delay(600).ContinueWith(_ => {
                     firstCard.FlipBack();
                     secondCard.FlipBack();
                 });
             }
 
-            // Reiniciar la lista de cartas seleccionadas
             selectedCards.Clear();
         }
     }

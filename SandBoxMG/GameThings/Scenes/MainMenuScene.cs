@@ -41,7 +41,7 @@ namespace SandBoxMG.Content.Code.Scenes
             Vector2 _position = new Vector2(450, 450);
             Vector2 _collsionSize = new Vector2(190, 60);
 
-            Button ButtonGame = CreateGenericGameObject<Button>();
+            ButtonGame ButtonGame = CreateGenericGameObject<ButtonGame>();
             ButtonGame.SetButtonProperties(_position, _collsionSize, "Sprites/Boton", "       Play", content);
 
             _GameObjectsInTheScene.Add(ButtonGame);
@@ -53,7 +53,7 @@ namespace SandBoxMG.Content.Code.Scenes
             Vector2 _collsionSize = new Vector2(190, 60);
 
             //scriptcardsspawner();
-            Button buttons = CreateGenericGameObject<Button>();
+            ButtonGame buttons = CreateGenericGameObject<ButtonGame>();
             buttons.SetButtonProperties(_position, _collsionSize, "Sprites/Boton", "  Localization", content);
 
             _GameObjectsInTheScene.Add(buttons);
