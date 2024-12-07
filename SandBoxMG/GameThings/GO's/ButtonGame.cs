@@ -3,11 +3,12 @@ using SandBoxMG.Content.Code.Scenes.GameObjects;
 using SandBoxMG.Content.Code.InputManager;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Content;
+using SandBoxMG.Content.Code.Scenes;
 using System.Collections.Generic;
 using Microsoft.Xna.Framework;
-using SandBoxMG.Content.Code.Scenes;
-using System;
 using System.Diagnostics;
+using System;
+using SandBoxMG.Content.Code.Localitation;
 
 namespace SandBoxMG.GameThings.GO_s
 {
@@ -16,10 +17,10 @@ namespace SandBoxMG.GameThings.GO_s
         private Vector2 _position;
         private Vector2 _collisionSize;
         private String _textureName;
-        public String _text;
+        public String _textKey;
 
         public CardsGameScene CGScene;
-
+        private TextComponent _textComponent;
         private ContentManager contentManager;
 
 
@@ -30,7 +31,7 @@ namespace SandBoxMG.GameThings.GO_s
             _position = postion;
             _collisionSize = collsiionSize;
             _textureName = nameTexture;
-            _text = text;
+            _textKey = text;
 
             InitializeGameObject(content);
         }
@@ -49,9 +50,9 @@ namespace SandBoxMG.GameThings.GO_s
             _collisionComponent.InitializeComponent(this);
             _collisionComponent.InitializeCollisionComponent(_collisionSize, this);
 
-            TextComponent _textComponent = CreateGenericComponent<TextComponent>();
-            _textComponent.InitializeTextComponent(_position);
-            _textComponent.SetText(_text);
+            _textComponent = CreateGenericComponent<TextComponent>();
+            _textComponent.InitializeComponent(this);
+            _textComponent.SetText(LocalizationManager.GetLocalizedText(_textKey));
 
             base.InitializeGameObject(content);
         }
@@ -74,6 +75,14 @@ namespace SandBoxMG.GameThings.GO_s
         {
             CGScene = new CardsGameScene();
             SceneManager.SetActiveScene(CGScene, contentManager);
+        }
+
+        public void ReloadButtonText()
+        {
+            if (_textComponent != null)
+            {
+                _textComponent.SetText(LocalizationManager.GetLocalizedText(_textKey));
+            }
         }
     }
 }

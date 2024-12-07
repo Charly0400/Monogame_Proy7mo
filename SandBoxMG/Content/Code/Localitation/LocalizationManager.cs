@@ -1,47 +1,46 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using System.Threading.Tasks;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
+using System;
 
 namespace SandBoxMG.Content.Code.Localitation {
-    public static class LocalizationManager 
+    public static class LocalizationManager
     {
-        private static readonly Dictionary<string, Dictionary<string, string>> _localizations = new()
-    {
+        public enum Language
         {
-            "en", new Dictionary<string, string>
-            {
-                { "play_button", "Play" },
-                { "localization_button", "Localization" },
-                { "main_menu_title", "SIMIOJUEGO" }
-            }
-        },
-        {
-            "es", new Dictionary<string, string>
-            {
-                { "play_button", "Jugar" },
-                { "localization_button", "Localización" },
-                { "main_menu_title", "SIMIOJUEGO" }
-            }
+            ENG = 0,
+            ESP = 1,
         }
-    };
 
-        public static string CurrentLanguage { get; private set; } = "es";
-
-        public static void SetLanguage(string language)
+        private static Language _currentLanguage = Language.ESP; 
+        private static Dictionary<string, string[]> _textDictionary = new Dictionary<string, string[]>
         {
-            if (_localizations.ContainsKey(language))
-            {
-                CurrentLanguage = language;
-            }
+            { "Play", new string[] { "        Play", "      Jugar" } },
+            { "Localization", new string[] { " Localization", " Localizacion" } },
+            { "Title", new string[] { "  MONOGAME  \n THE GAME", "  SIMIOJUEGO  \nEL JUEGO" } }
+        };
+
+        public static void SetLanguage(Language language)
+        {
+            _currentLanguage = language;
         }
 
         public static string GetLocalizedText(string key)
         {
-            return _localizations.TryGetValue(CurrentLanguage, out var translations) && translations.ContainsKey(key)
-                ? translations[key]
-                : key; // Devuelve la clave si no encuentra la traducción
+            if (_textDictionary.TryGetValue(key, out string[] translations))
+            {
+                return translations[(int)_currentLanguage];
+            }
+
+            Debug.WriteLine($"Advertencia: Clave '{key}' no encontrada en el diccionario de localización.");
+            return key;
+        }
+
+        public static void ToggleLanguage()
+        {
+            _currentLanguage = _currentLanguage == Language.ENG ? Language.ESP : Language.ENG;
         }
     }
 }

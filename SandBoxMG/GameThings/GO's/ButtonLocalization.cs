@@ -1,14 +1,15 @@
 ﻿using SandBoxMG.Content.Code.Scenes.GameObjects.Components;
 using SandBoxMG.Content.Code.Scenes.GameObjects;
+using SandBoxMG.Content.Code.Localitation;
 using SandBoxMG.Content.Code.InputManager;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Content;
+using SandBoxMG.Content.Code.Scenes;
 using System.Collections.Generic;
 using Microsoft.Xna.Framework;
-using SandBoxMG.Content.Code.Scenes;
-using System;
+using System.Threading.Tasks;
 using System.Diagnostics;
-using SandBoxMG.Content.Code.Localitation;
+using System;
 
 namespace SandBoxMG.GameThings.GO_s
 {
@@ -17,30 +18,29 @@ namespace SandBoxMG.GameThings.GO_s
         private Vector2 _position;
         private Vector2 _collisionSize;
         private String _textureName;
-        public String _text;
-
-        public CardsGameScene CGScene;
+        private string _textKey;
+        private TextComponent _textComponent;
         private ContentManager contentManager;
+        private MainMenuScene _parentScene;
+        private bool _clickProcessed = false;
 
-        public Action OnLocalizationButtonClicked { get; set; }
-        public string TextKey { get; private set; }
+
 
         public ButtonLocalization() { }
 
-        public void SetButtonProperties(Vector2 position, Vector2 collisionSize, string nameTexture, string textKey, ContentManager content)
+        public void SetButtonProperties(Vector2 position, Vector2 collisionSize, string nameTexture, string textKey, ContentManager content, MainMenuScene parentScene)
         {
             _position = position;
             _collisionSize = collisionSize;
             _textureName = nameTexture;
-            TextKey = textKey; // Guarda la clave original
-            _text = LocalizationManager.GetLocalizedText(textKey); // Obtén el texto traducido
+            _textKey = textKey;
+            _parentScene = parentScene;
             InitializeGameObject(content);
         }
 
         public override void InitializeGameObject(ContentManager content)
         {
             _positionOfTheGameObject = _position;
-
             contentManager = content;
 
             SpriteComponent _spriteComponent = CreateGenericComponent<SpriteComponent>();
@@ -51,22 +51,38 @@ namespace SandBoxMG.GameThings.GO_s
             _collisionComponent.InitializeComponent(this);
             _collisionComponent.InitializeCollisionComponent(_collisionSize, this);
 
-            TextComponent _textComponent = CreateGenericComponent<TextComponent>();
-            _textComponent.InitializeTextComponent(_position);
-            _textComponent.SetText(_text);
+            _textComponent = CreateGenericComponent<TextComponent>(); // Actualizar miembro de clase
+            _textComponent.InitializeComponent(this);
+            _textComponent.SetText(LocalizationManager.GetLocalizedText(_textKey));
 
             base.InitializeGameObject(content);
         }
 
+        public void ReloadButtonText()
+        {
+            if (_textComponent != null)
+            {
+                _textComponent.SetText(LocalizationManager.GetLocalizedText(_textKey)); // Actualizar texto
+            }
+        }
+        
         public override void UpdateGameObject()
         {
-            base.UpdateGameObject();
             if (InputManager.Clicked &&
-                new Rectangle((int)_position.X, (int)_position.Y, (int)_collisionSize.X, (int)_collisionSize.Y)
-                    .Intersects(InputManager.mouseCursor))
+        !   _clickProcessed && // Procesar solo si no está marcado
+            new Rectangle((int)_position.X, (int)_position.Y, (int)_collisionSize.X, (int)_collisionSize.Y)
+            .Intersects(InputManager.mouseCursor))
             {
-                OnLocalizationButtonClicked?.Invoke();
+                _clickProcessed = true;
+                OnClickLocalization();
             }
+
+            if(!InputManager.Clicked)
+            {
+                _clickProcessed = false;
+            }
+
+            
         }
         public override void renderComponents(SpriteBatch _spriteBatch)
         {
@@ -75,21 +91,11 @@ namespace SandBoxMG.GameThings.GO_s
 
         public virtual void OnClickLocalization()
         {
-            CGScene = new CardsGameScene();
-            SceneManager.SetActiveScene(CGScene, contentManager);
-        }
-
-        public void ReloadButtonText(string textKey)
-        {
-            _text = LocalizationManager.GetLocalizedText(textKey);
-
-            foreach (var component in components)
-            {
-                if (component is TextComponent textComponent)
-                {
-                    textComponent.SetText(_text);
-                }
-            }
+            
+            LocalizationManager.ToggleLanguage();
+            _parentScene.UpdateLocalizedTexts();
+            Debug.WriteLine("HOLA");
+      
         }
     }
 }

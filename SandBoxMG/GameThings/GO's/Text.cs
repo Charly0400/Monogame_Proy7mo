@@ -1,5 +1,7 @@
 ﻿using SandBoxMG.Content.Code.Scenes.GameObjects.Components;
 using SandBoxMG.Content.Code.Scenes.GameObjects;
+using SandBoxMG.Content.Code.Localitation;
+using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Content;
 using System.Collections.Generic;
 using Microsoft.Xna.Framework;
@@ -13,13 +15,14 @@ namespace SandBoxMG.GameThings.GO_s
     internal class Text : GameObject
     {
         private Vector2 _position;
-        private String _text;
+        private string _textKey;
+        private TextComponent _textComponent;
         public Text() { }
 
-        public void SetPropertiesText(Vector2 position, String text, ContentManager content)
+        public void SetPropertiesText(Vector2 position, String textKey, ContentManager content)
         {
             _position = position;
-            _text = text;
+            _textKey = textKey;
             InitializeGameObject(content);
         }
 
@@ -27,10 +30,23 @@ namespace SandBoxMG.GameThings.GO_s
         {
             _positionOfTheGameObject = _position;
 
-            TextComponent _textComponent = CreateGenericComponent<TextComponent>();
+            _textComponent = CreateGenericComponent<TextComponent>();
             _textComponent.InitializeComponent(this);
-            _textComponent.SetText(_text);
+            _textComponent.SetText(LocalizationManager.GetLocalizedText(_textKey));
             base.InitializeGameObject(content);
+        }
+
+        public override void renderComponents(SpriteBatch _spriteBatch)
+        {
+            base.renderComponents(_spriteBatch);
+        }
+
+        public void ReloadText()
+        {
+            if (_textComponent != null)
+            {
+                _textComponent.SetText(LocalizationManager.GetLocalizedText(_textKey));
+            }
         }
 
     }

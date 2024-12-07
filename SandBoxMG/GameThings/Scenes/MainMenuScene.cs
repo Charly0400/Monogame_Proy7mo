@@ -1,5 +1,6 @@
 ﻿using SandBoxMG.Content.Code.Scenes.GameObjects.Components;
 using SandBoxMG.Content.Code.Scenes.GameObjects;
+using SandBoxMG.Content.Code.Localitation;
 using SandBoxMG.Content.Code.InputManager;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Content;
@@ -31,7 +32,6 @@ namespace SandBoxMG.Content.Code.Scenes
             ButtonLocalitation(content);
             ButtonGame(content);
             base.InitializeScene(content);
-            Debug.WriteLine("Entra en initiliaze");
         }
 
         #region Botones
@@ -42,7 +42,7 @@ namespace SandBoxMG.Content.Code.Scenes
             Vector2 _collsionSize = new Vector2(190, 60);
 
             ButtonGame ButtonGame = CreateGenericGameObject<ButtonGame>();
-            ButtonGame.SetButtonProperties(_position, _collsionSize, "Sprites/Boton", "       Play", content);
+            ButtonGame.SetButtonProperties(_position, _collsionSize, "Sprites/Boton", "Play", content);
 
             _GameObjectsInTheScene.Add(ButtonGame);
         }
@@ -53,8 +53,8 @@ namespace SandBoxMG.Content.Code.Scenes
             Vector2 _collsionSize = new Vector2(190, 60);
 
             //scriptcardsspawner();
-            ButtonGame buttons = CreateGenericGameObject<ButtonGame>();
-            buttons.SetButtonProperties(_position, _collsionSize, "Sprites/Boton", "  Localization", content);
+            ButtonLocalization buttons = CreateGenericGameObject<ButtonLocalization>();
+            buttons.SetButtonProperties(_position, _collsionSize, "Sprites/Boton", "Localization", content, this);
 
             _GameObjectsInTheScene.Add(buttons);
 
@@ -65,11 +65,29 @@ namespace SandBoxMG.Content.Code.Scenes
             Vector2 _position = new Vector2(275, 100);
 
             Text text = CreateGenericGameObject<Text>();
-            text.SetPropertiesText(_position, "SIMIOJUEGO", content);
+            text.SetPropertiesText(_position, "Title", content);
 
             _GameObjectsInTheScene.Add(text);
         }
 
+        public void UpdateLocalizedTexts()
+        {
+            foreach (var gameObject in _GameObjectsInTheScene)
+            {
+                if (gameObject is Text text)
+                {
+                    text.ReloadText();
+                }
+                else if (gameObject is ButtonGame buttonGame)
+                {
+                    buttonGame.ReloadButtonText();
+                }
+                else if (gameObject is ButtonLocalization buttonLocalization)
+                {
+                    buttonLocalization.ReloadButtonText();
+                }
+            }
+        }
         #endregion
 
 
