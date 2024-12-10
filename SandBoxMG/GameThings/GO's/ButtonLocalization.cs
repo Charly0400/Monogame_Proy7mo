@@ -1,6 +1,6 @@
 ﻿using SandBoxMG.Content.Code.Scenes.GameObjects.Components;
 using SandBoxMG.Content.Code.Scenes.GameObjects;
-using SandBoxMG.Content.Code.Localitation;
+using SandBoxMG.Content.Code.Localization;
 using SandBoxMG.Content.Code.InputManager;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Content;
@@ -51,7 +51,7 @@ namespace SandBoxMG.GameThings.GO_s
             _collisionComponent.InitializeComponent(this);
             _collisionComponent.InitializeCollisionComponent(_collisionSize, this);
 
-            _textComponent = CreateGenericComponent<TextComponent>(); // Actualizar miembro de clase
+            _textComponent = CreateGenericComponent<TextComponent>();
             _textComponent.InitializeComponent(this);
             _textComponent.SetText(LocalizationManager.GetLocalizedText(_textKey));
 
@@ -62,14 +62,14 @@ namespace SandBoxMG.GameThings.GO_s
         {
             if (_textComponent != null)
             {
-                _textComponent.SetText(LocalizationManager.GetLocalizedText(_textKey)); // Actualizar texto
+                _textComponent.SetText(LocalizationManager.GetLocalizedText(_textKey)); 
             }
         }
         
         public override void UpdateGameObject()
         {
             if (InputManager.Clicked &&
-        !   _clickProcessed && // Procesar solo si no está marcado
+        !   _clickProcessed && 
             new Rectangle((int)_position.X, (int)_position.Y, (int)_collisionSize.X, (int)_collisionSize.Y)
             .Intersects(InputManager.mouseCursor))
             {

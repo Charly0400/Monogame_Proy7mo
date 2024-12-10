@@ -1,6 +1,6 @@
 ﻿using SandBoxMG.Content.Code.Scenes.GameObjects.Components;
 using SandBoxMG.Content.Code.Scenes.GameObjects;
-using SandBoxMG.Content.Code.Localitation;
+using SandBoxMG.Content.Code.Localization;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Content;
 using System.Collections.Generic;
@@ -32,7 +32,7 @@ namespace SandBoxMG.GameThings.GO_s
 
             _textComponent = CreateGenericComponent<TextComponent>();
             _textComponent.InitializeComponent(this);
-            _textComponent.SetText(LocalizationManager.GetLocalizedText(_textKey));
+            //_textComponent.SetText(LocalizationManager.GetLocalizedText(_textKey));
             base.InitializeGameObject(content);
         }
 

@@ -1,6 +1,6 @@
 ﻿using SandBoxMG.Content.Code.Scenes.GameObjects.Components;
 using SandBoxMG.Content.Code.Scenes.GameObjects;
-using SandBoxMG.Content.Code.Localitation;
+using SandBoxMG.Content.Code.Localization;
 using SandBoxMG.Content.Code.InputManager;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Content;
@@ -52,7 +52,6 @@ namespace SandBoxMG.Content.Code.Scenes
             Vector2 _position = new Vector2(100, 450);
             Vector2 _collsionSize = new Vector2(190, 60);
 
-            //scriptcardsspawner();
             ButtonLocalization buttons = CreateGenericGameObject<ButtonLocalization>();
             buttons.SetButtonProperties(_position, _collsionSize, "Sprites/Boton", "Localization", content, this);
 
@@ -88,8 +87,8 @@ namespace SandBoxMG.Content.Code.Scenes
                 }
             }
         }
-        #endregion
 
+        #endregion
 
     }
 }

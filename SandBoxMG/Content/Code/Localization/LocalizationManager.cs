@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System;
 
-namespace SandBoxMG.Content.Code.Localitation {
+namespace SandBoxMG.Content.Code.Localization {
     public static class LocalizationManager
     {
         public enum Language
@@ -22,19 +22,12 @@ namespace SandBoxMG.Content.Code.Localitation {
             { "Title", new string[] { "  MONOGAME  \n THE GAME", "  SIMIOJUEGO  \nEL JUEGO" } }
         };
 
-        public static void SetLanguage(Language language)
-        {
-            _currentLanguage = language;
-        }
-
         public static string GetLocalizedText(string key)
         {
             if (_textDictionary.TryGetValue(key, out string[] translations))
             {
                 return translations[(int)_currentLanguage];
             }
-
-            Debug.WriteLine($"Advertencia: Clave '{key}' no encontrada en el diccionario de localización.");
             return key;
         }
 

@@ -108,7 +108,6 @@ namespace SandBoxMG.GameThings.GO_s
                 spriteComponent.LoadSpriteTexture(currentTexture, contentManager);
                 isDiscover = true;
 
-                // Notificar al GameManager que esta carta ha sido seleccionada
                 GameManager?.OnCardSelected(this);
             }
 

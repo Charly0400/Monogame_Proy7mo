@@ -8,7 +8,7 @@ using System.Collections.Generic;
 using Microsoft.Xna.Framework;
 using System.Diagnostics;
 using System;
-using SandBoxMG.Content.Code.Localitation;
+using SandBoxMG.Content.Code.Localization;
 
 namespace SandBoxMG.GameThings.GO_s
 {
